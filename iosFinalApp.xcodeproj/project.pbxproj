@@ -16,6 +16,9 @@
 		88E6966620CBFB560045A1D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966520CBFB560045A1D3 /* MainViewController.swift */; };
 		88E6966820CC15F00045A1D3 /* QBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966720CC15F00045A1D3 /* QBMainViewController.swift */; };
 		88E6966A20CC16040045A1D3 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966920CC16040045A1D3 /* DBMainViewController.swift */; };
+		88E6966C20CC20110045A1D3 /* QBNewCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966B20CC20110045A1D3 /* QBNewCarViewController.swift */; };
+		88E6966F20CC269E0045A1D3 /* Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966E20CC269E0045A1D3 /* Make.swift */; };
+		88E6967120CC26A90045A1D3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6967020CC26A90045A1D3 /* Model.swift */; };
 		C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		88E6966520CBFB560045A1D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		88E6966720CC15F00045A1D3 /* QBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBMainViewController.swift; sourceTree = "<group>"; };
 		88E6966920CC16040045A1D3 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
+		88E6966B20CC20110045A1D3 /* QBNewCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBNewCarViewController.swift; sourceTree = "<group>"; };
+		88E6966E20CC269E0045A1D3 /* Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make.swift; sourceTree = "<group>"; };
+		88E6967020CC26A90045A1D3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +70,7 @@
 		888895AA20CB10D0000F8547 /* iosFinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				88E6966D20CC26800045A1D3 /* Models */,
 				C11E0B2B20CB673F005028E2 /* Controller */,
 				888895AB20CB10D0000F8547 /* AppDelegate.swift */,
 				888895AD20CB10D0000F8547 /* ViewController.swift */,
@@ -76,6 +83,15 @@
 			path = iosFinalApp;
 			sourceTree = "<group>";
 		};
+		88E6966D20CC26800045A1D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88E6966E20CC269E0045A1D3 /* Make.swift */,
+				88E6967020CC26A90045A1D3 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C11E0B2B20CB673F005028E2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +99,7 @@
 				88E6966520CBFB560045A1D3 /* MainViewController.swift */,
 				88E6966720CC15F00045A1D3 /* QBMainViewController.swift */,
 				88E6966920CC16040045A1D3 /* DBMainViewController.swift */,
+				88E6966B20CC20110045A1D3 /* QBNewCarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,9 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E6966F20CC269E0045A1D3 /* Make.swift in Sources */,
 				88E6966820CC15F00045A1D3 /* QBMainViewController.swift in Sources */,
+				88E6966C20CC20110045A1D3 /* QBNewCarViewController.swift in Sources */,
 				88E6966A20CC16040045A1D3 /* DBMainViewController.swift in Sources */,
 				C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */,
+				88E6967120CC26A90045A1D3 /* Model.swift in Sources */,
 				888895AE20CB10D0000F8547 /* ViewController.swift in Sources */,
 				888895AC20CB10D0000F8547 /* AppDelegate.swift in Sources */,
 				888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */,

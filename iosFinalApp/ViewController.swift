@@ -34,7 +34,8 @@ class ViewController: UIViewController {
     // --
     
     @IBAction func btnLogin(_ sender: Any) {
-        
+                self.performSegue(withIdentifier: "segueQBMain", sender: self)
+        /*
         // Get Data
         let username = txtUsername.text!
         let password = txtPassword.text!
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
             }
             
         }
-        
+        */
     }
     
     private func displayMessage(_ mensagem: String) {
