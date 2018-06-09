@@ -52,6 +52,7 @@ class RegisterPageViewController: UIViewController {
             
             //Success Message
             displayMessage("Registo Concluido com Sucesso", type: 0)
+
             // url video PKOswUE731c
         }
     }
@@ -62,15 +63,16 @@ class RegisterPageViewController: UIViewController {
         // 1 to Error
         
         if ( type == 1) {
-            var alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: UIAlertControllerStyle.alert)
+            let alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alerta.addAction(okAction)
             self.present(alerta, animated: true, completion: nil)
         } else {
-            var alerta = UIAlertController(title: "Bem Vindo", message: mensagem, preferredStyle: .alert)
+            let alerta = UIAlertController(title: "Bem Vindo", message: mensagem, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default){
                 (action) in
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "segueMain", sender: self)
             }
             
             alerta.addAction(okAction)
