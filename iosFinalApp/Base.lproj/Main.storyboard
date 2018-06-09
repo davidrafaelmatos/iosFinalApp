@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dtz-up-Ysm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -572,7 +572,7 @@
                                             <constraint firstAttribute="height" constant="44" id="9K7-6j-dbB"/>
                                         </constraints>
                                         <items>
-                                            <navigationItem title="Dou Boleia - Carros" id="Tip-04-xH3">
+                                            <navigationItem title="Dou Boleia - Veiculos" id="Tip-04-xH3">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="organize" id="BFl-i2-0wu"/>
                                                 <barButtonItem key="rightBarButtonItem" title="Sair" id="1xr-ul-e9e"/>
                                             </navigationItem>
@@ -609,6 +609,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnNewCar:" destination="Dtz-up-Ysm" eventType="touchUpInside" id="upy-nR-k52"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -677,10 +680,140 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uQV-Vr-43c"/>
                     </view>
+                    <connections>
+                        <segue destination="bdR-KV-Yo8" kind="presentation" identifier="segueNewCar" id="fmM-jE-ll2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48C-KB-bea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2349.5999999999999" y="29.23538230884558"/>
+        </scene>
+        <!--Car New View Controller-->
+        <scene sceneID="iGo-h2-6Ga">
+            <objects>
+                <viewController id="bdR-KV-Yo8" customClass="DBCarNewViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0UM-Kf-M0s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nb-wc-Bd9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HLi-s7-svJ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Dou Boleia - Adicionar Veiculo" id="QFZ-qD-lLg"/>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="axh-Ns-sxM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ty1-yz-gvl">
+                                <rect key="frame" x="20" y="125" width="335" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bdR-KV-Yo8" id="7Ul-0g-r1K"/>
+                                    <outlet property="delegate" destination="bdR-KV-Yo8" id="QDD-No-SQL"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insira a Marca e o Modelo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0E-Vp-cMJ">
+                                <rect key="frame" x="20" y="84" width="335" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ivo-sP-qvh">
+                                <rect key="frame" x="20" y="402" width="335" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Gasolina"/>
+                                    <segment title="Gasoleo"/>
+                                    <segment title="Eletrico"/>
+                                </segments>
+                                <connections>
+                                    <action selector="btnCombustivel:" destination="bdR-KV-Yo8" eventType="valueChanged" id="25c-57-H0h"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de Combustivel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiN-ET-44W">
+                                <rect key="frame" x="20" y="361" width="335" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comsumos em Litros/100Kilometros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tc-56-jww">
+                                <rect key="frame" x="20" y="450" width="335" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-GD-1U0">
+                                <rect key="frame" x="20" y="491" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-A1-Ub1">
+                                <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Yp-Ku-i6x"/>
+                                </constraints>
+                                <state key="normal" title="Guardar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnGuardar:" destination="bdR-KV-Yo8" eventType="touchUpInside" id="LPM-ik-p4E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="axh-Ns-sxM" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" id="4Ei-wy-fDS"/>
+                            <constraint firstItem="Lo4-GD-1U0" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="4wQ-mo-hhW"/>
+                            <constraint firstItem="axh-Ns-sxM" firstAttribute="top" secondItem="6nb-wc-Bd9" secondAttribute="bottom" id="53v-9C-g1i"/>
+                            <constraint firstItem="0Tc-56-jww" firstAttribute="top" secondItem="ivo-sP-qvh" secondAttribute="bottom" constant="20" id="CRz-2r-F3d"/>
+                            <constraint firstItem="I0E-Vp-cMJ" firstAttribute="top" secondItem="6nb-wc-Bd9" secondAttribute="bottom" constant="20" id="EUV-oa-fdg"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="bottom" secondItem="axh-Ns-sxM" secondAttribute="bottom" id="Fk8-AA-MOA"/>
+                            <constraint firstAttribute="trailing" secondItem="6nb-wc-Bd9" secondAttribute="trailing" id="GqQ-xH-7BP"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="AiN-ET-44W" secondAttribute="trailing" constant="20" id="HuT-qY-qfz"/>
+                            <constraint firstItem="ivo-sP-qvh" firstAttribute="top" secondItem="AiN-ET-44W" secondAttribute="bottom" constant="20" id="LPh-W8-Bjs"/>
+                            <constraint firstItem="Lo4-GD-1U0" firstAttribute="top" secondItem="0Tc-56-jww" secondAttribute="bottom" constant="20" id="LU1-z3-LGl"/>
+                            <constraint firstItem="I0E-Vp-cMJ" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="LpW-9I-sXl"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="bottom" secondItem="b7q-A1-Ub1" secondAttribute="bottom" constant="20" id="OOT-RG-o2s"/>
+                            <constraint firstItem="ivo-sP-qvh" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="QkA-nb-vV7"/>
+                            <constraint firstItem="AiN-ET-44W" firstAttribute="top" secondItem="Ty1-yz-gvl" secondAttribute="bottom" constant="20" id="RkY-ey-26x"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="b7q-A1-Ub1" secondAttribute="trailing" constant="20" id="SS8-cI-BqP"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="axh-Ns-sxM" secondAttribute="trailing" id="Sbb-i2-ypG"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="ivo-sP-qvh" secondAttribute="trailing" constant="20" id="Xsu-dr-Ktn"/>
+                            <constraint firstItem="6nb-wc-Bd9" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" id="blI-F4-zhj"/>
+                            <constraint firstItem="Ty1-yz-gvl" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="eVg-Oj-op1"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="I0E-Vp-cMJ" secondAttribute="trailing" constant="20" id="ghP-80-1F6"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="0Tc-56-jww" secondAttribute="trailing" constant="20" id="ird-Ax-cDY"/>
+                            <constraint firstItem="lbY-G1-uNR" firstAttribute="trailing" secondItem="Lo4-GD-1U0" secondAttribute="trailing" constant="20" id="jlK-Zq-WgA"/>
+                            <constraint firstItem="0Tc-56-jww" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="oes-es-zC3"/>
+                            <constraint firstItem="Ty1-yz-gvl" firstAttribute="top" secondItem="I0E-Vp-cMJ" secondAttribute="bottom" constant="20" id="psf-fA-8e8"/>
+                            <constraint firstItem="AiN-ET-44W" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="qSb-c6-kTA"/>
+                            <constraint firstItem="6nb-wc-Bd9" firstAttribute="top" secondItem="lbY-G1-uNR" secondAttribute="top" id="sqz-Ti-EZj"/>
+                            <constraint firstItem="Ty1-yz-gvl" firstAttribute="trailing" secondItem="axh-Ns-sxM" secondAttribute="trailing" constant="-20" id="tLz-nX-ZQD"/>
+                            <constraint firstItem="b7q-A1-Ub1" firstAttribute="leading" secondItem="lbY-G1-uNR" secondAttribute="leading" constant="20" id="z7H-P9-LW4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lbY-G1-uNR"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="Ty1-yz-gvl" id="C3h-HG-OXS"/>
+                        <outlet property="txtComsumos" destination="Lo4-GD-1U0" id="3Rw-KC-YnH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TA8-fd-nK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="33"/>
         </scene>
     </scenes>
     <resources>
@@ -695,7 +828,8 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oAJ-bD-stu"/>
+        <segue reference="3Zx-rJ-BfD"/>
+        <segue reference="keB-Hb-0El"/>
         <segue reference="pQX-gY-eyg"/>
     </inferredMetricsTieBreakers>
 </document>

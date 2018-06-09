@@ -10,9 +10,30 @@ import UIKit
 
 class DBCarViewController: UIViewController {
 
+    // Outlets
+    // --
+    
+    @IBOutlet weak var btnNewCar: UIButton!
+    
+    // --
+    // End Outlets
+    
+    // Actions
+    // --
+    
+    @IBAction func btnNewCar(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segueNewCar", sender: self)
+        
+        
+    }
+    
+    // --
+    // End Actions
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
 

@@ -9,6 +9,8 @@
 import UIKit
 
 struct Make : Decodable, Encodable{
-    let Make_ID: Int
-    let Make_Name: String
+    let MakeId: Int
+    let MakeName: String
+    let VehicleTypeId: Int
+    let VehicleTypeName: String
 }
