@@ -6,4 +6,9 @@
 //  Copyright © 2018 davidmatos. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Make : Decodable, Encodable{
+    let Make_ID: Int
+    let Make_Name: String
+}

@@ -7,36 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882B407120CC4EFF00715BE5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882B407020CC4EFF00715BE5 /* Media.xcassets */; };
+		882B407520CC753A00715BE5 /* DBCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B407420CC753A00715BE5 /* DBCarViewController.swift */; };
 		888895AC20CB10D0000F8547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888895AB20CB10D0000F8547 /* AppDelegate.swift */; };
 		888895AE20CB10D0000F8547 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888895AD20CB10D0000F8547 /* ViewController.swift */; };
 		888895B120CB10D0000F8547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888895AF20CB10D0000F8547 /* Main.storyboard */; };
 		888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 888895B220CB10D0000F8547 /* iosFinalApp.xcdatamodeld */; };
-		888895B620CB10D2000F8547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888895B520CB10D2000F8547 /* Assets.xcassets */; };
 		888895B920CB10D2000F8547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888895B720CB10D2000F8547 /* LaunchScreen.storyboard */; };
 		88E6966620CBFB560045A1D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966520CBFB560045A1D3 /* MainViewController.swift */; };
-		88E6966820CC15F00045A1D3 /* QBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966720CC15F00045A1D3 /* QBMainViewController.swift */; };
-		88E6966A20CC16040045A1D3 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966920CC16040045A1D3 /* DBMainViewController.swift */; };
-		88E6966C20CC20110045A1D3 /* QBNewCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966B20CC20110045A1D3 /* QBNewCarViewController.swift */; };
+		88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966720CC15F00045A1D3 /* DBMainViewController.swift */; };
+		88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966920CC16040045A1D3 /* QBMainViewController.swift */; };
+		88E6966C20CC20110045A1D3 /* DBCarNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966B20CC20110045A1D3 /* DBCarNewViewController.swift */; };
 		88E6966F20CC269E0045A1D3 /* Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966E20CC269E0045A1D3 /* Make.swift */; };
 		88E6967120CC26A90045A1D3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6967020CC26A90045A1D3 /* Model.swift */; };
+		88E6967320CC36C20045A1D3 /* MakeReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6967220CC36C20045A1D3 /* MakeReturn.swift */; };
 		C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		882B407020CC4EFF00715BE5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		882B407420CC753A00715BE5 /* DBCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCarViewController.swift; sourceTree = "<group>"; };
 		888895A820CB10D0000F8547 /* iosFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888895AB20CB10D0000F8547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		888895AD20CB10D0000F8547 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		888895B020CB10D0000F8547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		888895B320CB10D0000F8547 /* iosFinalApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosFinalApp.xcdatamodel; sourceTree = "<group>"; };
-		888895B520CB10D2000F8547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		888895B820CB10D2000F8547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		888895BA20CB10D2000F8547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88E6966520CBFB560045A1D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		88E6966720CC15F00045A1D3 /* QBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBMainViewController.swift; sourceTree = "<group>"; };
-		88E6966920CC16040045A1D3 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
-		88E6966B20CC20110045A1D3 /* QBNewCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBNewCarViewController.swift; sourceTree = "<group>"; };
+		88E6966720CC15F00045A1D3 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
+		88E6966920CC16040045A1D3 /* QBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBMainViewController.swift; sourceTree = "<group>"; };
+		88E6966B20CC20110045A1D3 /* DBCarNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCarNewViewController.swift; sourceTree = "<group>"; };
 		88E6966E20CC269E0045A1D3 /* Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make.swift; sourceTree = "<group>"; };
 		88E6967020CC26A90045A1D3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		88E6967220CC36C20045A1D3 /* MakeReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReturn.swift; sourceTree = "<group>"; };
 		C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,10 +79,10 @@
 				888895AB20CB10D0000F8547 /* AppDelegate.swift */,
 				888895AD20CB10D0000F8547 /* ViewController.swift */,
 				888895AF20CB10D0000F8547 /* Main.storyboard */,
-				888895B520CB10D2000F8547 /* Assets.xcassets */,
 				888895B720CB10D2000F8547 /* LaunchScreen.storyboard */,
 				888895BA20CB10D2000F8547 /* Info.plist */,
 				888895B220CB10D0000F8547 /* iosFinalApp.xcdatamodeld */,
+				882B407020CC4EFF00715BE5 /* Media.xcassets */,
 			);
 			path = iosFinalApp;
 			sourceTree = "<group>";
@@ -88,6 +92,7 @@
 			children = (
 				88E6966E20CC269E0045A1D3 /* Make.swift */,
 				88E6967020CC26A90045A1D3 /* Model.swift */,
+				88E6967220CC36C20045A1D3 /* MakeReturn.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,9 +102,10 @@
 			children = (
 				C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */,
 				88E6966520CBFB560045A1D3 /* MainViewController.swift */,
-				88E6966720CC15F00045A1D3 /* QBMainViewController.swift */,
-				88E6966920CC16040045A1D3 /* DBMainViewController.swift */,
-				88E6966B20CC20110045A1D3 /* QBNewCarViewController.swift */,
+				88E6966720CC15F00045A1D3 /* DBMainViewController.swift */,
+				88E6966920CC16040045A1D3 /* QBMainViewController.swift */,
+				88E6966B20CC20110045A1D3 /* DBCarNewViewController.swift */,
+				882B407420CC753A00715BE5 /* DBCarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				888895B920CB10D2000F8547 /* LaunchScreen.storyboard in Resources */,
-				888895B620CB10D2000F8547 /* Assets.xcassets in Resources */,
+				882B407120CC4EFF00715BE5 /* Media.xcassets in Resources */,
 				888895B120CB10D0000F8547 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,12 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E6967320CC36C20045A1D3 /* MakeReturn.swift in Sources */,
 				88E6966F20CC269E0045A1D3 /* Make.swift in Sources */,
-				88E6966820CC15F00045A1D3 /* QBMainViewController.swift in Sources */,
-				88E6966C20CC20110045A1D3 /* QBNewCarViewController.swift in Sources */,
-				88E6966A20CC16040045A1D3 /* DBMainViewController.swift in Sources */,
+				88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */,
+				88E6966C20CC20110045A1D3 /* DBCarNewViewController.swift in Sources */,
+				88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */,
 				C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */,
 				88E6967120CC26A90045A1D3 /* Model.swift in Sources */,
+				882B407520CC753A00715BE5 /* DBCarViewController.swift in Sources */,
 				888895AE20CB10D0000F8547 /* ViewController.swift in Sources */,
 				888895AC20CB10D0000F8547 /* AppDelegate.swift in Sources */,
 				888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */,

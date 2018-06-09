@@ -1,5 +1,5 @@
 //
-//  QBMainViewController.swift
+//  DBMainViewController.swift
 //  iosFinalApp
 //
 //  Created by DocAdmin on 6/9/18.

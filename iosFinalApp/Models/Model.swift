@@ -6,4 +6,11 @@
 //  Copyright © 2018 davidmatos. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Model : Decodable, Encodable{
+    let Make_ID: Int
+    let Make_Name: String
+    let Model_ID: Int
+    let Model_Name: String
+}
