@@ -13,6 +13,7 @@
 		888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 888895B220CB10D0000F8547 /* iosFinalApp.xcdatamodeld */; };
 		888895B620CB10D2000F8547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888895B520CB10D2000F8547 /* Assets.xcassets */; };
 		888895B920CB10D2000F8547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888895B720CB10D2000F8547 /* LaunchScreen.storyboard */; };
+		C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		888895B520CB10D2000F8547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		888895B820CB10D2000F8547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		888895BA20CB10D2000F8547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		888895AA20CB10D0000F8547 /* iosFinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				C11E0B2B20CB673F005028E2 /* Controller */,
 				888895AB20CB10D0000F8547 /* AppDelegate.swift */,
 				888895AD20CB10D0000F8547 /* ViewController.swift */,
 				888895AF20CB10D0000F8547 /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				888895B220CB10D0000F8547 /* iosFinalApp.xcdatamodeld */,
 			);
 			path = iosFinalApp;
+			sourceTree = "<group>";
+		};
+		C11E0B2B20CB673F005028E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C11E0B2C20CB678B005028E2 /* RegisterPageViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */,
 				888895AE20CB10D0000F8547 /* ViewController.swift in Sources */,
 				888895AC20CB10D0000F8547 /* AppDelegate.swift in Sources */,
 				888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */,
