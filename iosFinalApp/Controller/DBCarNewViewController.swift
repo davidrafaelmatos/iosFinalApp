@@ -16,6 +16,7 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var makeId: Int = -1
     var model: String = ""
     var modelId: Int = -1
+    var tipoCombustivel: Int = 0
     
 
     // Outlets
@@ -30,10 +31,34 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // Actions
     // --
     
-    @IBAction func btnCombustivel(_ sender: Any) {
+    @IBAction func btnCombustivel(_ sender: UISegmentedControl) {
+        
+        switch (sender.selectedSegmentIndex) {
+        case 0:
+            tipoCombustivel = 0
+        case 1:
+            tipoCombustivel = 1
+        default:
+            tipoCombustivel = 2
+        }
+        
     }
     
     @IBAction func btnGuardar(_ sender: Any) {
+        
+        var comsumos: Double = -1
+        
+        
+        if (make.isEmpty || model.isEmpty || txtComsumos.text!.isEmpty){
+            displayMessage("Tem que preencher todos os campos", type: 1)
+        } else {
+            comsumos = Double(txtComsumos.text!)!
+            var carro = Car(Marca: make, Modelo: model, TipoCombustivel: tipoCombustivel, Comsumos: comsumos, fkUser: 1, estado: 1);
+            print(carro)
+            self.performSegue(withIdentifier: "segueCarro", sender: self)        }
+
+        
+        
     }
     
     // --
@@ -157,5 +182,27 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // --
     // End WS
     
+    private func displayMessage(_ mensagem: String, type: Int) {
+        
+        // 0 to Success
+        // 1 to Error
+        
+        if ( type == 1) {
+            let alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alerta.addAction(okAction)
+            self.present(alerta, animated: true, completion: nil)
+        } else {
+            let alerta = UIAlertController(title: "Bem Vindo", message: mensagem, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default){
+                (action) in
+                //self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "segueMain", sender: self)
+            }
+            
+            alerta.addAction(okAction)
+            self.present(alerta, animated: true, completion: nil)
+        }
+    }
 
 }

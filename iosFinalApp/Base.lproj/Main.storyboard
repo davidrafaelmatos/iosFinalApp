@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dtz-up-Ysm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -809,6 +809,7 @@
                     <connections>
                         <outlet property="pickerView" destination="Ty1-yz-gvl" id="C3h-HG-OXS"/>
                         <outlet property="txtComsumos" destination="Lo4-GD-1U0" id="3Rw-KC-YnH"/>
+                        <segue destination="Dtz-up-Ysm" kind="presentation" identifier="segueCarro" id="2Xn-zv-0q7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TA8-fd-nK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -829,6 +830,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Zx-rJ-BfD"/>
+        <segue reference="2Xn-zv-0q7"/>
         <segue reference="keB-Hb-0El"/>
         <segue reference="pQX-gY-eyg"/>
     </inferredMetricsTieBreakers>
