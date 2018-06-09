@@ -38,28 +38,44 @@ class RegisterPageViewController: UIViewController {
         //Verifications
         if( nome.isEmpty || username.isEmpty || email.isEmpty || pass.isEmpty || repPass.isEmpty) {
             // Error Message
-            displayMessage("Todos os campos tem de estar preenchidos");
+            displayMessage("Todos os campos tem de estar preenchidos", type: 1);
             return;
         } else {
             
             if(pass != repPass) {
                 // Error Message
-                displayMessage("As Palavras Chaves não são iguais")
+                displayMessage("As Palavras Chaves não são iguais", type: 1)
                 return;
             }
             
             //Store Data
             
             //Success Message
-            displayMessage("Registo Concluido com Sucesso")
+            displayMessage("Registo Concluido com Sucesso", type: 0)
             // url video PKOswUE731c
         }
     }
     
-    private func displayMessage(_ mensagem: String) {
+    private func displayMessage(_ mensagem: String, type: Int) {
         
-        var alerta = UIAlertController(title: "Alert", message: mensagem, preferredStyle: UIAlertControllerStyle.alert)
+        // 0 to Success
+        // 1 to Error
         
+        if ( type == 1) {
+            var alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alerta.addAction(okAction)
+            self.present(alerta, animated: true, completion: nil)
+        } else {
+            var alerta = UIAlertController(title: "Bem Vindo", message: mensagem, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default){
+                (action) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+            alerta.addAction(okAction)
+            self.present(alerta, animated: true, completion: nil)
+        }
     }
     
     // --
