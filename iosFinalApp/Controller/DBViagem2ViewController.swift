@@ -1,5 +1,5 @@
 //
-//  HistoricoDetalheViewController.swift
+//  DBViagem2ViewController.swift
 //  iosFinalApp
 //
 //  Created by DocAdmin on 6/10/18.
@@ -8,20 +8,21 @@
 
 import UIKit
 
-class DBHistoricoDetalheViewController: UIViewController {
-   
+class DBViagem2ViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        //a.text = Global.origemDBViagem
+        //b.text = Global.destinoDBViagem
         // Do any additional setup after loading the view.
     }
     
     // Outlets
     // --
     
-    @IBOutlet weak var lblOrigem: UITextView!
-    @IBOutlet weak var lblDestino: UITextView!
-    @IBOutlet weak var lblCarro: UILabel!
+    @IBOutlet weak var a: UITextField!
+    @IBOutlet weak var b: UITextField!
     
     // --
     // End Outlets
@@ -32,12 +33,4 @@ class DBHistoricoDetalheViewController: UIViewController {
     
     // --
     // End Actions
-    
-    // Functions
-    // --
-    
-    
-    // End Functions
-    
-    
 }

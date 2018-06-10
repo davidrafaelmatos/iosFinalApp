@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Globals" representedClassName="Globals" syncable="YES" codeGenerationType="class">
+        <attribute name="destinoDBViagem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origemDBViagem" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Login" representedClassName="Login" syncable="YES" codeGenerationType="class">
         <attribute name="idUser" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -7,5 +11,6 @@
     </entity>
     <elements>
         <element name="Login" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Globals" positionX="-63" positionY="9" width="128" height="75"/>
     </elements>
 </model>
