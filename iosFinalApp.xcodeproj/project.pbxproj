@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8810C31620CD74F600ED9B53 /* DBCarEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C31520CD74F600ED9B53 /* DBCarEditViewController.swift */; };
+		8810C31820CD7EDB00ED9B53 /* DBHistoricoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C31720CD7EDB00ED9B53 /* DBHistoricoViewController.swift */; };
+		8810C31A20CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C31920CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift */; };
+		8810C31C20CD83E300ED9B53 /* Viagens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C31B20CD83E300ED9B53 /* Viagens.swift */; };
+		8810C31E20CD849600ED9B53 /* Boleias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C31D20CD849600ED9B53 /* Boleias.swift */; };
+		8810C32020CD855700ED9B53 /* Proposta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C31F20CD855700ED9B53 /* Proposta.swift */; };
 		882B407120CC4EFF00715BE5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882B407020CC4EFF00715BE5 /* Media.xcassets */; };
 		882B407520CC753A00715BE5 /* DBCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B407420CC753A00715BE5 /* DBCarViewController.swift */; };
 		882B407A20CC852D00715BE5 /* ModelReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B407920CC852D00715BE5 /* ModelReturn.swift */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8810C31520CD74F600ED9B53 /* DBCarEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCarEditViewController.swift; sourceTree = "<group>"; };
+		8810C31720CD7EDB00ED9B53 /* DBHistoricoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoricoViewController.swift; sourceTree = "<group>"; };
+		8810C31920CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoricoDetalheViewController.swift; sourceTree = "<group>"; };
+		8810C31B20CD83E300ED9B53 /* Viagens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viagens.swift; sourceTree = "<group>"; };
+		8810C31D20CD849600ED9B53 /* Boleias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boleias.swift; sourceTree = "<group>"; };
+		8810C31F20CD855700ED9B53 /* Proposta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proposta.swift; sourceTree = "<group>"; };
 		882B407020CC4EFF00715BE5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		882B407420CC753A00715BE5 /* DBCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCarViewController.swift; sourceTree = "<group>"; };
 		882B407920CC852D00715BE5 /* ModelReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelReturn.swift; sourceTree = "<group>"; };
@@ -107,6 +119,9 @@
 				88E6967220CC36C20045A1D3 /* MakeReturn.swift */,
 				882B407920CC852D00715BE5 /* ModelReturn.swift */,
 				882B407B20CC8B9E00715BE5 /* Car.swift */,
+				8810C31B20CD83E300ED9B53 /* Viagens.swift */,
+				8810C31D20CD849600ED9B53 /* Boleias.swift */,
+				8810C31F20CD855700ED9B53 /* Proposta.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +135,9 @@
 				88E6966920CC16040045A1D3 /* QBMainViewController.swift */,
 				88E6966B20CC20110045A1D3 /* DBCarNewViewController.swift */,
 				882B407420CC753A00715BE5 /* DBCarViewController.swift */,
+				8810C31520CD74F600ED9B53 /* DBCarEditViewController.swift */,
+				8810C31720CD7EDB00ED9B53 /* DBHistoricoViewController.swift */,
+				8810C31920CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,17 +214,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				88E6967320CC36C20045A1D3 /* MakeReturn.swift in Sources */,
+				8810C32020CD855700ED9B53 /* Proposta.swift in Sources */,
+				8810C31A20CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift in Sources */,
 				882B407A20CC852D00715BE5 /* ModelReturn.swift in Sources */,
 				88E6966F20CC269E0045A1D3 /* Make.swift in Sources */,
+				8810C31820CD7EDB00ED9B53 /* DBHistoricoViewController.swift in Sources */,
 				88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */,
+				8810C31E20CD849600ED9B53 /* Boleias.swift in Sources */,
 				88E6966C20CC20110045A1D3 /* DBCarNewViewController.swift in Sources */,
 				88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */,
 				C11E0B2D20CB678B005028E2 /* RegisterPageViewController.swift in Sources */,
 				88E6967120CC26A90045A1D3 /* Model.swift in Sources */,
+				8810C31620CD74F600ED9B53 /* DBCarEditViewController.swift in Sources */,
 				882B407520CC753A00715BE5 /* DBCarViewController.swift in Sources */,
 				888895AE20CB10D0000F8547 /* ViewController.swift in Sources */,
 				888895AC20CB10D0000F8547 /* AppDelegate.swift in Sources */,
 				888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */,
+				8810C31C20CD83E300ED9B53 /* Viagens.swift in Sources */,
 				882B407C20CC8B9E00715BE5 /* Car.swift in Sources */,
 				88E6966620CBFB560045A1D3 /* MainViewController.swift in Sources */,
 			);
