@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // Var
+    // --
+    
+    var result: Bool = false;
+    
+    // --
+    // End Var
+    
     // Outlets
     // --
     
@@ -38,28 +46,14 @@ class ViewController: UIViewController {
     // --
     
     @IBAction func btnLogin(_ sender: Any) {
-                self.performSegue(withIdentifier: "segueQBMain", sender: self)
-        /*
-        // Get Data
-        let username = txtUsername.text!
-        let password = txtPassword.text!
-        
+
         // Validations
-        if ( username.isEmpty || password.isEmpty) {
+        if ( txtUsername.text!.isEmpty || txtPassword.text!.isEmpty) {
             //Error Message
             displayMessage("Os campos tem que estar todos preenchidos")
         } else {
-            
-            if(username == "admin" && password == "12345") {
-                //Login Success
-                self.performSegue(withIdentifier: "segueMain", sender: self)
-            } else {
-                //Error Message
-                displayMessage("Os dados inseridos estao incorretos")
-            }
-            
+            validLogin(username: txtUsername.text!, password: txtPassword.text!)
         }
-        */
     }
     
     private func displayMessage(_ mensagem: String) {
@@ -76,5 +70,51 @@ class ViewController: UIViewController {
     // --
     // End Action
 
+    // Functions
+    // --
+    
+    private func validLogin(username: String, password:String){
+        var request = URLRequest(url: URL(string: "http://davidmatos.pt/slimIOS/index.php/user/login")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let dados = WSInputLogin(username: username, password: password)
+            let jsonBody = try JSONEncoder().encode(dados)
+            request.httpBody = jsonBody
+        } catch {
+            print("error")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("data is empty")
+                return
+            }
+            do {
+                let response = try JSONDecoder().decode( WSReturnLogin.self, from: data)
+                DispatchQueue.main.async {
+                    if(response.Login){
+                        Global.idUser = response.id
+                        Global.nomeUser = response.nome
+                        self.performSegue(withIdentifier: "segueMain", sender: self)
+                    } else {
+                        self.displayMessage("Os dados inseridos estao incorretos")
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
+    }
+    
+    // --
+    // End Functions
+    
 }
 

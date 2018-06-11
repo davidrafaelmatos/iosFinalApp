@@ -11,5 +11,7 @@ import UIKit
 struct Global {
     static var origemDBViagem: String = "";
     static var destinoDBViagem: String = "";
+    static var nomeUser: String = "";
+    static var idUser: Int = -1;
     
 }

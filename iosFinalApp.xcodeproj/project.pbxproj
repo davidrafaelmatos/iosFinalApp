@@ -28,6 +28,9 @@
 		888895B120CB10D0000F8547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888895AF20CB10D0000F8547 /* Main.storyboard */; };
 		888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 888895B220CB10D0000F8547 /* iosFinalApp.xcdatamodeld */; };
 		888895B920CB10D2000F8547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888895B720CB10D2000F8547 /* LaunchScreen.storyboard */; };
+		8895A69720CF118800CA36E4 /* WSReturnLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895A69620CF118800CA36E4 /* WSReturnLogin.swift */; };
+		8895A69920CF1B9400CA36E4 /* WSInputLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895A69820CF1B9400CA36E4 /* WSInputLogin.swift */; };
+		8895A69B20CF224700CA36E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895A69A20CF224700CA36E4 /* User.swift */; };
 		88E6966620CBFB560045A1D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966520CBFB560045A1D3 /* MainViewController.swift */; };
 		88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966720CC15F00045A1D3 /* DBMainViewController.swift */; };
 		88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966920CC16040045A1D3 /* QBMainViewController.swift */; };
@@ -62,6 +65,9 @@
 		888895B320CB10D0000F8547 /* iosFinalApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosFinalApp.xcdatamodel; sourceTree = "<group>"; };
 		888895B820CB10D2000F8547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		888895BA20CB10D2000F8547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8895A69620CF118800CA36E4 /* WSReturnLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnLogin.swift; sourceTree = "<group>"; };
+		8895A69820CF1B9400CA36E4 /* WSInputLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSInputLogin.swift; sourceTree = "<group>"; };
+		8895A69A20CF224700CA36E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88E6966520CBFB560045A1D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		88E6966720CC15F00045A1D3 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
 		88E6966920CC16040045A1D3 /* QBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBMainViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 		888895AA20CB10D0000F8547 /* iosFinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				8895A69520CF116F00CA36E4 /* WSReturn */,
+				8895A69420CF116100CA36E4 /* WSInput */,
 				882B407620CC77C100715BE5 /* Data */,
 				88E6966D20CC26800045A1D3 /* Models */,
 				C11E0B2B20CB673F005028E2 /* Controller */,
@@ -124,6 +132,22 @@
 			path = iosFinalApp;
 			sourceTree = "<group>";
 		};
+		8895A69420CF116100CA36E4 /* WSInput */ = {
+			isa = PBXGroup;
+			children = (
+				8895A69820CF1B9400CA36E4 /* WSInputLogin.swift */,
+			);
+			path = WSInput;
+			sourceTree = "<group>";
+		};
+		8895A69520CF116F00CA36E4 /* WSReturn */ = {
+			isa = PBXGroup;
+			children = (
+				8895A69620CF118800CA36E4 /* WSReturnLogin.swift */,
+			);
+			path = WSReturn;
+			sourceTree = "<group>";
+		};
 		88E6966D20CC26800045A1D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +159,7 @@
 				8810C31B20CD83E300ED9B53 /* Viagens.swift */,
 				8810C31D20CD849600ED9B53 /* Boleias.swift */,
 				8810C31F20CD855700ED9B53 /* Proposta.swift */,
+				8895A69A20CF224700CA36E4 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +264,7 @@
 				8810C31820CD7EDB00ED9B53 /* DBHistoricoViewController.swift in Sources */,
 				88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */,
 				8810C31E20CD849600ED9B53 /* Boleias.swift in Sources */,
+				8895A69B20CF224700CA36E4 /* User.swift in Sources */,
 				88E6966C20CC20110045A1D3 /* DBCarNewViewController.swift in Sources */,
 				88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */,
 				8810C32C20CDAC9200ED9B53 /* QBViagemsViewController.swift in Sources */,
@@ -251,6 +277,8 @@
 				8810C31620CD74F600ED9B53 /* DBCarEditViewController.swift in Sources */,
 				882B407520CC753A00715BE5 /* DBCarViewController.swift in Sources */,
 				888895AE20CB10D0000F8547 /* ViewController.swift in Sources */,
+				8895A69920CF1B9400CA36E4 /* WSInputLogin.swift in Sources */,
+				8895A69720CF118800CA36E4 /* WSReturnLogin.swift in Sources */,
 				8810C32620CD950200ED9B53 /* Global.swift in Sources */,
 				888895AC20CB10D0000F8547 /* AppDelegate.swift in Sources */,
 				888895B420CB10D0000F8547 /* iosFinalApp.xcdatamodeld in Sources */,

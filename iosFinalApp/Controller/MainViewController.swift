@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lbl.text = Global.nomeUser
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +21,8 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var lbl: UILabel!
+    
     /*
     // MARK: - Navigation
 
