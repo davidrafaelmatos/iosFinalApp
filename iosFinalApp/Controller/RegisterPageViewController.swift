@@ -9,7 +9,13 @@
 import UIKit
 
 class RegisterPageViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
+    }
+    
     // Outlets
     // --
     
@@ -28,39 +34,30 @@ class RegisterPageViewController: UIViewController {
     
     @IBAction func btnRegistar(_ sender: Any) {
         
-        // GetData
-        let nome = txtNome.text!
-        let username = txtUsername.text!
-        let email = txtEmail.text!
-        let pass = txtPassword.text!
-        let repPass = txtRepeatPassword.text!
-        
         //Verifications
-        if( nome.isEmpty || username.isEmpty || email.isEmpty || pass.isEmpty || repPass.isEmpty) {
+        if( txtNome.text!.isEmpty || txtUsername.text!.isEmpty || txtEmail.text!.isEmpty || txtPassword.text!.isEmpty || txtRepeatPassword.text!.isEmpty) {
             // Error Message
             displayMessage("Todos os campos tem de estar preenchidos", type: 1);
             return;
         } else {
             
-            if(pass != repPass) {
+            if(txtPassword.text! != txtRepeatPassword.text!) {
                 // Error Message
                 displayMessage("As Palavras Chaves não são iguais", type: 1)
                 return;
             }
-            
-            //Store Data
-            
-            //Success Message
-            displayMessage("Registo Concluido com Sucesso", type: 0)
-
-            // url video PKOswUE731c
+            addUser()
         }
     }
     
+    // --
+    // End Actions
+    
+    // Functions
+    // --
+    
     private func displayMessage(_ mensagem: String, type: Int) {
-        
-        // 0 to Success
-        // 1 to Error
+
         
         if ( type == 1) {
             let alerta = UIAlertController(title: "Alerta", message: mensagem, preferredStyle: UIAlertControllerStyle.alert)
@@ -71,7 +68,6 @@ class RegisterPageViewController: UIViewController {
             let alerta = UIAlertController(title: "Bem Vindo", message: mensagem, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default){
                 (action) in
-                //self.dismiss(animated: true, completion: nil)
                 self.performSegue(withIdentifier: "segueMain", sender: self)
             }
             
@@ -80,29 +76,48 @@ class RegisterPageViewController: UIViewController {
         }
     }
     
+    private func addUser(){
+        var request = URLRequest(url: URL(string: "http://davidmatos.pt/slimIOS/index.php/user/new")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let dados = User(username: txtUsername.text!, password: txtPassword.text!, nome: txtNome.text!, email: txtEmail.text!, estado: 1)
+            print(dados)
+            let jsonBody = try JSONEncoder().encode(dados)
+            request.httpBody = jsonBody
+        } catch {
+            print("error")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("data is empty")
+                return
+            }
+            do {
+                let response = try JSONDecoder().decode( WSReturnRegistar.self, from: data)
+                DispatchQueue.main.async {
+                    if(response.Add){
+                        Global.idUser = response.id
+                        Global.nomeUser = self.txtNome.text!
+                        self.displayMessage("O seu registo foi comcluido com sucesso", type: 0)
+                    } else {
+                        self.displayMessage("Os dados inseridos estao incorretos", type: 1)
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
+    }
+    
     // --
-    // End Actions
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // End Functions
 
 }

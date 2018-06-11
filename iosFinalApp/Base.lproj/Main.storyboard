@@ -197,18 +197,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIs-9x-ekv">
-                                <rect key="frame" x="20" y="40" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w8N-xb-dUb" firstAttribute="bottom" secondItem="K7S-mY-VPs" secondAttribute="bottom" constant="50" id="3HA-7n-4KX"/>
-                            <constraint firstItem="w8N-xb-dUb" firstAttribute="trailing" secondItem="TIs-9x-ekv" secondAttribute="trailing" constant="20" id="5N3-ZY-dJM"/>
-                            <constraint firstItem="TIs-9x-ekv" firstAttribute="leading" secondItem="w8N-xb-dUb" secondAttribute="leading" constant="20" id="6yo-3g-GmL"/>
                             <constraint firstItem="Eln-td-nrS" firstAttribute="leading" secondItem="w8N-xb-dUb" secondAttribute="leading" constant="20" id="7ZU-Zg-7Ke"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="top" secondItem="w8N-xb-dUb" secondAttribute="top" id="8Gh-jp-zwt"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="leading" secondItem="w8N-xb-dUb" secondAttribute="leading" id="8mq-GD-SrK"/>
@@ -217,14 +209,10 @@
                             <constraint firstItem="w8N-xb-dUb" firstAttribute="bottom" secondItem="Eln-td-nrS" secondAttribute="bottom" constant="50" id="aQg-tK-A6X"/>
                             <constraint firstItem="Eln-td-nrS" firstAttribute="width" secondItem="K7S-mY-VPs" secondAttribute="width" id="bse-Eg-OZ3"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="bottom" secondItem="w8N-xb-dUb" secondAttribute="bottom" id="spB-gu-CGq"/>
-                            <constraint firstItem="TIs-9x-ekv" firstAttribute="top" secondItem="w8N-xb-dUb" secondAttribute="top" constant="20" id="x1T-Db-LrY"/>
                             <constraint firstItem="w8N-xb-dUb" firstAttribute="trailing" secondItem="K7S-mY-VPs" secondAttribute="trailing" constant="20" id="yjQ-gQ-Yn8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w8N-xb-dUb"/>
                     </view>
-                    <connections>
-                        <outlet property="lbl" destination="TIs-9x-ekv" id="w0u-nF-kG3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRw-G6-CGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1845,6 +1833,6 @@
         <segue reference="Q9i-Zv-EI4"/>
         <segue reference="rXg-OK-vIG"/>
         <segue reference="oAJ-bD-stu"/>
-        <segue reference="pQX-gY-eyg"/>
+        <segue reference="27q-fu-oFG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,9 +9,9 @@
 import UIKit
 
 struct User: Encodable, Decodable {
-    let idUser: Int
     let username: String
     let password: String
     let nome: String
+    let email: String
     let estado: Int
 }
