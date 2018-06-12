@@ -23,8 +23,8 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     // --
     var make: String = ""
     var model: String = ""
-    var combustiveis: Int = -1
-    var comsumos: Double = -1
+    var combustiveis: String = ""
+    //var comsumos: String = -1
     
     // --
     // End Variables
@@ -74,24 +74,24 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             displayMessage("Todos os campos tem que estar preenchidos", type: 1)
             
         } else {
-            comsumos = Double(txtComsumos.text!)!
-            let car = Car(Marca: make, Modelo: model, TipoCombustivel: combustiveis, Comsumos: comsumos, fkUser: 1, estado: 1)
+            //comsumos = Double(txtComsumos.text!)!
+            //let car = Car(idCar: "-1", Marca: make, Modelo: model, combustivel: combustiveis, consumo: comsumos, fkUser: "1", estado: "1")
 
-            print(car)
+            //print(car)
             displayMessage("O carro foi editado com sucesso", type: 0)
             
         }
     }
     
     @IBAction func btnCombustivel(_ sender: UISegmentedControl) {
-        switch (sender.selectedSegmentIndex) {
+        /*switch (sender.selectedSegmentIndex) {
         case 0:
-            combustiveis = 0
+            //combustiveis = 0
         case 1:
-            combustiveis = 1
+           // combustiveis = 1
         default:
-            combustiveis = 2
-        }
+           // combustiveis = 2
+        }*/
     }
     // --
     // End Actions
@@ -104,11 +104,11 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         make = "bmw"
         model = "320d"
-        combustiveis = 1
-        comsumos = 12.1
+        //combustiveis = 1
+       // comsumos = 12.1
         
-        btnCombustivel.selectedSegmentIndex = combustiveis
-        txtComsumos.text = String(comsumos)
+      //  btnCombustivel.selectedSegmentIndex = combustiveis
+       // txtComsumos.text = String(comsumos)
         
     }
     

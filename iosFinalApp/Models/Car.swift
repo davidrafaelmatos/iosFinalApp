@@ -9,10 +9,11 @@
 import UIKit
 
 struct Car : Decodable, Encodable{
-    let Marca: String
-    let Modelo: String
-    let TipoCombustivel: Int
-    let Comsumos: Double
-    let fkUser: Int
-    let estado: Int
+    let idCar: String // é um int
+    let marca: String
+    let modelo: String
+    let combustivel: String // é um int
+    let consumo: String // é um double
+    let fkUser: String // é um int
+    let estado: String // é um int
 }

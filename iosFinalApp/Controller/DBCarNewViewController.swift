@@ -53,8 +53,8 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
             displayMessage("Tem que preencher todos os campos", type: 1)
         } else {
             comsumos = Double(txtComsumos.text!)!
-            let carro = Car(Marca: make, Modelo: model, TipoCombustivel: tipoCombustivel, Comsumos: comsumos, fkUser: 1, estado: 1);
-            print(carro)
+            //let carro = Car(idCar: -1, Marca: make, Modelo: model, combustivel: tipoCombustivel, consumo: comsumos, fkUser: 1, estado: 1);
+            //print(carro)
             self.performSegue(withIdentifier: "segueCarro", sender: self)        }
 
         
