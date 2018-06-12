@@ -13,5 +13,6 @@ struct Global {
     static var destinoDBViagem: String = "";
     static var nomeUser: String = "";
     static var idUser: Int = -1;
+    static var idCar: Int = -1;
     
 }

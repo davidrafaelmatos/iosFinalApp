@@ -12,7 +12,7 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoadData()
+        loadData()
         // Do any additional setup after loading the view.
     }
     
@@ -23,9 +23,6 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     // --
     var make: String = ""
     var model: String = ""
-    var combustiveis: String = ""
-    //var comsumos: String = -1
-    
     // --
     // End Variables
     
@@ -74,12 +71,9 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             displayMessage("Todos os campos tem que estar preenchidos", type: 1)
             
         } else {
-            //comsumos = Double(txtComsumos.text!)!
-            //let car = Car(idCar: "-1", Marca: make, Modelo: model, combustivel: combustiveis, consumo: comsumos, fkUser: "1", estado: "1")
-
-            //print(car)
-            displayMessage("O carro foi editado com sucesso", type: 0)
             
+            let carro = WSInputCarEdit(combustivel: btnCombustivel.selectedSegmentIndex, consumo: Double(txtComsumos.text!)!)
+            editCar(car: carro)
         }
     }
     
@@ -99,17 +93,36 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     // functions
     // --
     
-    private func LoadData(){
-        // WS
+    private func loadData(){
+        print(Global.idUser)
+        let urlString = "http://davidmatos.pt/slimIOS/index.php/carro/" + String(Global.idCar)
+        print(urlString)
+        guard let url = URL(string: urlString) else { return }
         
-        make = "bmw"
-        model = "320d"
-        //combustiveis = 1
-       // comsumos = 12.1
-        
-      //  btnCombustivel.selectedSegmentIndex = combustiveis
-       // txtComsumos.text = String(comsumos)
-        
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let response = try JSONDecoder().decode(WSReturnCarByIdUser.self, from: data)
+                DispatchQueue.main.async {
+                    for car in response.Result{
+                        self.make = car.marca
+                        self.model = car.modelo
+                        self.btnCombustivel.selectedSegmentIndex = Int(car.combustivel)!
+                        self.txtComsumos.text = car.consumo
+                        self.pickerView.reloadAllComponents()
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            }.resume()
     }
     
     private func displayMessage(_ mensagem: String, type: Int) {
@@ -123,7 +136,7 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             alerta.addAction(okAction)
             self.present(alerta, animated: true, completion: nil)
         } else {
-            let alerta = UIAlertController(title: "Bem Vindo", message: mensagem, preferredStyle: .alert)
+            let alerta = UIAlertController(title: "Editar", message: mensagem, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default){
                 (action) in
                 self.performSegue(withIdentifier: "segueCarroMain", sender: self)
@@ -132,6 +145,47 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             alerta.addAction(okAction)
             self.present(alerta, animated: true, completion: nil)
         }
+    }
+    
+    private func editCar(car: WSInputCarEdit){
+        var request = URLRequest(url: URL(string: "http://davidmatos.pt/slimIOS/index.php/carro/edit/" + String(Global.idCar))!)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonBody = try JSONEncoder().encode(car)
+            request.httpBody = jsonBody
+            let jsonBodyString = String(data: jsonBody, encoding: .utf8)
+        } catch {
+            print("error")
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("data is empty")
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(WSReturnCarEdit.self, from: data)
+                DispatchQueue.main.async {
+                    if(response.edit){
+                        self.displayMessage("O seu carro foi editado com sucesso", type: 0)
+                    } else {
+                        self.displayMessage("Ocoreu um erro durante a alteração do carro", type: 1)
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
     }
 
     

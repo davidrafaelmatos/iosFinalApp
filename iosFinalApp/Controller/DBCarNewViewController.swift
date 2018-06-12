@@ -46,19 +46,13 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func btnGuardar(_ sender: Any) {
         
-        var comsumos: Double = -1
-        
-        
         if (make.isEmpty || model.isEmpty || txtComsumos.text!.isEmpty){
             displayMessage("Tem que preencher todos os campos", type: 1)
         } else {
-            comsumos = Double(txtComsumos.text!)!
-            //let carro = Car(idCar: -1, Marca: make, Modelo: model, combustivel: tipoCombustivel, consumo: comsumos, fkUser: 1, estado: 1);
-            //print(carro)
-            self.performSegue(withIdentifier: "segueCarro", sender: self)        }
+            let carro = WSInputCar(marca: make, modelo: model, combustivel: tipoCombustivel, consumo: Double(txtComsumos.text!)!, fkUser: Global.idUser, estado: 1)
+            addCar(car: carro)
+        }
 
-        
-        
     }
     
     // --
@@ -108,11 +102,6 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         // Do any additional setup after loading the view.
         loadMake()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // WS
@@ -178,6 +167,43 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
         pickerView.reloadComponent(0)
     }
     
+    private func addCar(car: WSInputCar){
+        var request = URLRequest(url: URL(string: "http://davidmatos.pt/slimIOS/index.php/carro/new")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let jsonBody = try JSONEncoder().encode(car)
+            request.httpBody = jsonBody
+        } catch {
+            print("error")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("data is empty")
+                return
+            }
+            do {
+                let response = try JSONDecoder().decode( WSReturnCarNew.self, from: data)
+                DispatchQueue.main.async {
+                    if(response.Post){
+                        self.displayMessage("O seu carro foi adicionado com sucesso", type: 0)
+                    } else {
+                        self.displayMessage("Os dados inseridos estao incorretos", type: 1)
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
+    }
+    
     
     // --
     // End WS
@@ -197,7 +223,7 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let okAction = UIAlertAction(title: "Ok", style: .default){
                 (action) in
                 //self.dismiss(animated: true, completion: nil)
-                self.performSegue(withIdentifier: "segueMain", sender: self)
+                self.performSegue(withIdentifier: "segueCarro", sender: self)
             }
             
             alerta.addAction(okAction)

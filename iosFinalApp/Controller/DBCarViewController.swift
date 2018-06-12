@@ -13,7 +13,13 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
     // Var
     // --
     
-    var listaCarros: [String] = []
+    struct lista {
+        let makeModel: String
+        let consumoCombustivel: String
+        let id: Int
+    }
+    
+    var listaCarros: [lista] = []
     
     // --
     // Var
@@ -56,8 +62,8 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = listaCarros[indexPath.row]
-        cell.detailTextLabel?.text = "info Adicional"
+        cell.textLabel?.text = listaCarros[indexPath.row].makeModel
+        cell.detailTextLabel?.text = listaCarros[indexPath.row].consumoCombustivel
         
         return cell
     }
@@ -66,11 +72,12 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editar = UITableViewRowAction(style: .default, title: "Editar"){action, index in
-            print("editar: " + String(index.row) + " " + self.listaCarros[index.row])
+            Global.idCar = self.listaCarros[index.row].id
+            self.performSegue(withIdentifier: "segueEditCar", sender: self)
         }
         editar.backgroundColor = UIColor.blue
         let delete = UITableViewRowAction(style: .default, title: "Apagar"){action, index in
-            print("apagar: " + String(index.row))
+            self.deleteCar(idCar: self.listaCarros[index.row].id, index: index.row)
         }
         delete.backgroundColor = UIColor.red
         return [editar, delete]
@@ -97,8 +104,17 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
             do {
                 let response = try JSONDecoder().decode(WSReturnCarByIdUser.self, from: data)
                 DispatchQueue.main.async {
+                    var valComb:String
                     for car in response.Result {
-                        let aux = car.marca + " " + car.modelo
+                        switch Int(car.combustivel){
+                        case 0:
+                            valComb = "Gasolina"
+                        case 1:
+                            valComb = "Gasoleo"
+                        default:
+                            valComb = "Eletrico"
+                        }
+                        let aux = lista(makeModel: (car.marca + " " + car.modelo), consumoCombustivel: String(car.consumo) + " " + valComb, id: Int(car.idCar)!)
                         self.listaCarros.append(aux)
                     }
                     print(self.listaCarros)
@@ -110,6 +126,32 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             
             }.resume()
+    }
+    
+    private func deleteCar(idCar:Int, index:Int){
+        let urlString: String = "http://davidmatos.pt/slimIOS/index.php/carro/delete/" + String(idCar)
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = "DELETE"
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            guard let data = data else { return }
+            
+            do {
+                let response = try JSONDecoder().decode(WSReturnDeleteCar.self, from: data)
+                DispatchQueue.main.async {
+                    print(response.mensagem)
+                    self.listaCarros.remove(at: index)
+                    self.tableCarros.reloadData()
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
     }
     
     // --

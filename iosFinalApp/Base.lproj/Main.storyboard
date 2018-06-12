@@ -732,6 +732,7 @@
                         <outlet property="contLat" destination="As4-Aq-2JP" id="Y1R-Zg-4cq"/>
                         <outlet property="tableCarros" destination="DkO-yL-ZC4" id="Ljb-0j-CLP"/>
                         <segue destination="bdR-KV-Yo8" kind="presentation" identifier="segueNewCar" id="fmM-jE-ll2"/>
+                        <segue destination="5sp-Eo-zp3" kind="presentation" identifier="segueEditCar" id="dzT-Az-40z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48C-KB-bea" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,7 +888,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-v0-1il">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-bU-zrD">
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-bU-zrD">
                                 <rect key="frame" x="20" y="84" width="335" height="216"/>
                                 <color key="backgroundColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -1838,7 +1839,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q9i-Zv-EI4"/>
-        <segue reference="rXg-OK-vIG"/>
+        <segue reference="dzT-Az-40z"/>
+        <segue reference="QvR-bf-Jqb"/>
         <segue reference="oAJ-bD-stu"/>
         <segue reference="27q-fu-oFG"/>
     </inferredMetricsTieBreakers>

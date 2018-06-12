@@ -33,6 +33,11 @@
 		8895A69B20CF224700CA36E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895A69A20CF224700CA36E4 /* User.swift */; };
 		8895A69D20CF39CB00CA36E4 /* WSReturnRegistar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895A69C20CF39CB00CA36E4 /* WSReturnRegistar.swift */; };
 		8895A69F20CF498600CA36E4 /* WSReturnCarByIdUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895A69E20CF498600CA36E4 /* WSReturnCarByIdUser.swift */; };
+		88DAAA2120D06F280026E9FD /* WSReturnDeleteCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2020D06F280026E9FD /* WSReturnDeleteCar.swift */; };
+		88DAAA2320D072DC0026E9FD /* WSInputCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2220D072DC0026E9FD /* WSInputCar.swift */; };
+		88DAAA2520D075250026E9FD /* WSReturnCarNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2420D075250026E9FD /* WSReturnCarNew.swift */; };
+		88DAAA2720D079D40026E9FD /* WSInputCarEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2620D079D40026E9FD /* WSInputCarEdit.swift */; };
+		88DAAA2920D07C2E0026E9FD /* WSReturnCarEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2820D07C2E0026E9FD /* WSReturnCarEdit.swift */; };
 		88E6966620CBFB560045A1D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966520CBFB560045A1D3 /* MainViewController.swift */; };
 		88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966720CC15F00045A1D3 /* DBMainViewController.swift */; };
 		88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966920CC16040045A1D3 /* QBMainViewController.swift */; };
@@ -72,6 +77,11 @@
 		8895A69A20CF224700CA36E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8895A69C20CF39CB00CA36E4 /* WSReturnRegistar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnRegistar.swift; sourceTree = "<group>"; };
 		8895A69E20CF498600CA36E4 /* WSReturnCarByIdUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnCarByIdUser.swift; sourceTree = "<group>"; };
+		88DAAA2020D06F280026E9FD /* WSReturnDeleteCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnDeleteCar.swift; sourceTree = "<group>"; };
+		88DAAA2220D072DC0026E9FD /* WSInputCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSInputCar.swift; sourceTree = "<group>"; };
+		88DAAA2420D075250026E9FD /* WSReturnCarNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnCarNew.swift; sourceTree = "<group>"; };
+		88DAAA2620D079D40026E9FD /* WSInputCarEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSInputCarEdit.swift; sourceTree = "<group>"; };
+		88DAAA2820D07C2E0026E9FD /* WSReturnCarEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnCarEdit.swift; sourceTree = "<group>"; };
 		88E6966520CBFB560045A1D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		88E6966720CC15F00045A1D3 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
 		88E6966920CC16040045A1D3 /* QBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBMainViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				8895A69820CF1B9400CA36E4 /* WSInputLogin.swift */,
+				88DAAA2220D072DC0026E9FD /* WSInputCar.swift */,
+				88DAAA2620D079D40026E9FD /* WSInputCarEdit.swift */,
 			);
 			path = WSInput;
 			sourceTree = "<group>";
@@ -150,6 +162,9 @@
 				8895A69620CF118800CA36E4 /* WSReturnLogin.swift */,
 				8895A69C20CF39CB00CA36E4 /* WSReturnRegistar.swift */,
 				8895A69E20CF498600CA36E4 /* WSReturnCarByIdUser.swift */,
+				88DAAA2020D06F280026E9FD /* WSReturnDeleteCar.swift */,
+				88DAAA2420D075250026E9FD /* WSReturnCarNew.swift */,
+				88DAAA2820D07C2E0026E9FD /* WSReturnCarEdit.swift */,
 			);
 			path = WSReturn;
 			sourceTree = "<group>";
@@ -262,17 +277,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88DAAA2320D072DC0026E9FD /* WSInputCar.swift in Sources */,
 				88E6967320CC36C20045A1D3 /* MakeReturn.swift in Sources */,
 				8810C32020CD855700ED9B53 /* Proposta.swift in Sources */,
 				8810C31A20CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift in Sources */,
 				882B407A20CC852D00715BE5 /* ModelReturn.swift in Sources */,
 				88E6966F20CC269E0045A1D3 /* Make.swift in Sources */,
+				88DAAA2920D07C2E0026E9FD /* WSReturnCarEdit.swift in Sources */,
+				88DAAA2120D06F280026E9FD /* WSReturnDeleteCar.swift in Sources */,
 				8810C31820CD7EDB00ED9B53 /* DBHistoricoViewController.swift in Sources */,
 				88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */,
+				88DAAA2720D079D40026E9FD /* WSInputCarEdit.swift in Sources */,
 				8810C31E20CD849600ED9B53 /* Boleias.swift in Sources */,
 				8895A69B20CF224700CA36E4 /* User.swift in Sources */,
 				88E6966C20CC20110045A1D3 /* DBCarNewViewController.swift in Sources */,
 				8895A69F20CF498600CA36E4 /* WSReturnCarByIdUser.swift in Sources */,
+				88DAAA2520D075250026E9FD /* WSReturnCarNew.swift in Sources */,
 				88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */,
 				8810C32C20CDAC9200ED9B53 /* QBViagemsViewController.swift in Sources */,
 				8810C32820CD9C0600ED9B53 /* DBPropostasViewController.swift in Sources */,
