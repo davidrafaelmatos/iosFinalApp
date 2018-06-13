@@ -14,5 +14,5 @@ struct Global {
     static var nomeUser: String = "";
     static var idUser: Int = -1;
     static var idCar: Int = -1;
-    
+    static var idHistorico: Int = -1;
 }

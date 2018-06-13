@@ -38,6 +38,7 @@
 		88DAAA2520D075250026E9FD /* WSReturnCarNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2420D075250026E9FD /* WSReturnCarNew.swift */; };
 		88DAAA2720D079D40026E9FD /* WSInputCarEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2620D079D40026E9FD /* WSInputCarEdit.swift */; };
 		88DAAA2920D07C2E0026E9FD /* WSReturnCarEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2820D07C2E0026E9FD /* WSReturnCarEdit.swift */; };
+		88DAAA2B20D085C80026E9FD /* WSReturnViagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DAAA2A20D085C80026E9FD /* WSReturnViagem.swift */; };
 		88E6966620CBFB560045A1D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966520CBFB560045A1D3 /* MainViewController.swift */; };
 		88E6966820CC15F00045A1D3 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966720CC15F00045A1D3 /* DBMainViewController.swift */; };
 		88E6966A20CC16040045A1D3 /* QBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E6966920CC16040045A1D3 /* QBMainViewController.swift */; };
@@ -82,6 +83,7 @@
 		88DAAA2420D075250026E9FD /* WSReturnCarNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnCarNew.swift; sourceTree = "<group>"; };
 		88DAAA2620D079D40026E9FD /* WSInputCarEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSInputCarEdit.swift; sourceTree = "<group>"; };
 		88DAAA2820D07C2E0026E9FD /* WSReturnCarEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnCarEdit.swift; sourceTree = "<group>"; };
+		88DAAA2A20D085C80026E9FD /* WSReturnViagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReturnViagem.swift; sourceTree = "<group>"; };
 		88E6966520CBFB560045A1D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		88E6966720CC15F00045A1D3 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
 		88E6966920CC16040045A1D3 /* QBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBMainViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				88DAAA2020D06F280026E9FD /* WSReturnDeleteCar.swift */,
 				88DAAA2420D075250026E9FD /* WSReturnCarNew.swift */,
 				88DAAA2820D07C2E0026E9FD /* WSReturnCarEdit.swift */,
+				88DAAA2A20D085C80026E9FD /* WSReturnViagem.swift */,
 			);
 			path = WSReturn;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				88DAAA2320D072DC0026E9FD /* WSInputCar.swift in Sources */,
 				88E6967320CC36C20045A1D3 /* MakeReturn.swift in Sources */,
+				88DAAA2B20D085C80026E9FD /* WSReturnViagem.swift in Sources */,
 				8810C32020CD855700ED9B53 /* Proposta.swift in Sources */,
 				8810C31A20CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift in Sources */,
 				882B407A20CC852D00715BE5 /* ModelReturn.swift in Sources */,

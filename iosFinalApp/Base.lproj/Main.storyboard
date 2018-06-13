@@ -478,6 +478,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="DIN-PU-Nbj" kind="presentation" id="A9A-MF-ecD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpJ-ZA-ryC">
                                         <rect key="frame" x="5" y="301.5" width="240" height="93.5"/>
@@ -1020,6 +1023,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M8g-zd-VUF">
                                 <rect key="frame" x="20" y="144" width="335" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DIN-PU-Nbj" id="Trg-Ah-u0Y"/>
+                                    <outlet property="delegate" destination="DIN-PU-Nbj" id="fGp-Ye-j3v"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1042,6 +1049,7 @@
                         <viewLayoutGuide key="safeArea" id="p1d-mS-krt"/>
                     </view>
                     <connections>
+                        <outlet property="tableViagem" destination="M8g-zd-VUF" id="95L-vZ-FbZ"/>
                         <segue destination="lxE-Kx-Ffr" kind="presentation" identifier="segueHistoricoDetalhe" id="Ktz-f0-4dr"/>
                     </connections>
                 </viewController>
@@ -1146,6 +1154,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-2f-3pw">
                                 <rect key="frame" x="20" y="494" width="335" height="93"/>
                                 <color key="backgroundColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lxE-Kx-Ffr" id="vxZ-hI-1DB"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0c-zZ-6Kx">
                                 <rect key="frame" x="20" y="607" width="335" height="40"/>
@@ -1216,6 +1227,7 @@
                         <outlet property="lblCarro" destination="Ugp-i9-2KH" id="2PL-Ka-PFo"/>
                         <outlet property="lblDestino" destination="lTI-UU-6tl" id="Rin-Tb-bC1"/>
                         <outlet property="lblOrigem" destination="ywn-ok-k2l" id="XOc-pN-e9U"/>
+                        <outlet property="tableNome" destination="eo8-2f-3pw" id="e7P-Zo-2HT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09q-H1-t36" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1840,7 +1852,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Q9i-Zv-EI4"/>
         <segue reference="dzT-Az-40z"/>
-        <segue reference="QvR-bf-Jqb"/>
+        <segue reference="rXg-OK-vIG"/>
         <segue reference="oAJ-bD-stu"/>
         <segue reference="27q-fu-oFG"/>
     </inferredMetricsTieBreakers>
