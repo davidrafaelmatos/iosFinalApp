@@ -23,10 +23,15 @@ class DBHistoricoDetalheViewController: UIViewController, UITableViewDataSource 
         let Origem: String
         let Destino: String
         let Carro: String
-        let Boleia: [String]
+        let Boleia: [WSReturnUser]
     }
     
-    var listNomes:[String] = []
+    struct WSReturnUser: Decodable, Encodable {
+        let nome: String
+        let estadoPagamento: Int
+    }
+    
+    var listNomes:[WSReturnUser] = []
     
     // --
     // Var
@@ -51,7 +56,7 @@ class DBHistoricoDetalheViewController: UIViewController, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = listNomes[indexPath.row]
+        cell.textLabel?.text = listNomes[indexPath.row].nome
         return cell
     }
     
@@ -75,7 +80,8 @@ class DBHistoricoDetalheViewController: UIViewController, UITableViewDataSource 
                 let response = try JSONDecoder().decode(WSReturnResult.self, from: data)
                 DispatchQueue.main.async {
                         for boleia in response.Boleia{
-                            self.listNomes.append(boleia)
+                            let aux = WSReturnUser(nome: boleia.nome, estadoPagamento: boleia.estadoPagamento)
+                            self.listNomes.append(aux)
                             self.tableNome.reloadData()
                         }
                         self.lblCarro.text = response.Carro
