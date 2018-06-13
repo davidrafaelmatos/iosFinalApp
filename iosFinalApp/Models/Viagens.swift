@@ -11,9 +11,11 @@ import UIKit
 struct Viagens : Decodable, Encodable{
     let idViagem: String
     let origemNome: String
-    let origemCoord: String
+    let origemCoordLat: String
+    let origemCoordLong: String
     let destinoNome: String
-    let destinoCoord: String
+    let destinoCoordLat: String
+    let destinoCoordLong: String
     let fkCar: String // int
     let fkUser: String // int
     let totalKm: String // double

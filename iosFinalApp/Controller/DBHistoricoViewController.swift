@@ -56,7 +56,7 @@ class DBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
     //MARK UITableViewDelegate
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let editar = UITableViewRowAction(style: .default, title: "Editar"){action, index in
+        let editar = UITableViewRowAction(style: .default, title: "Detalhes"){action, index in
             Global.idHistorico = self.listHistorico[index.row].idHistorico
             self.performSegue(withIdentifier: "segueHistoricoDetalhe", sender: self)
         }

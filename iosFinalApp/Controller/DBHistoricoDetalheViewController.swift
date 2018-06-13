@@ -28,7 +28,7 @@ class DBHistoricoDetalheViewController: UIViewController, UITableViewDataSource 
     
     struct WSReturnUser: Decodable, Encodable {
         let nome: String
-        let estadoPagamento: Int
+        let estadoPagamento: String
     }
     
     var listNomes:[WSReturnUser] = []
@@ -57,6 +57,9 @@ class DBHistoricoDetalheViewController: UIViewController, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
         cell.textLabel?.text = listNomes[indexPath.row].nome
+        if Int(listNomes[indexPath.row].estadoPagamento)! == 1 {
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
         return cell
     }
     
