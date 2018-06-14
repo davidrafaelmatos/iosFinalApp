@@ -90,7 +90,7 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     struct WSReturnBoleia: Encodable, Decodable {
-        let 
+        let Post: Bool
     }
     
     var varAux: dados = dados(origemCoordMasterLat: "", origemCoordMasterLong: "", origemCoordLat: "", origemCoordLong: "", destinoCoordMasterLat: "", destinoCoordMasterLong: "", idViagem: "", idUser: "")
@@ -333,7 +333,7 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
                 return
             }
             do {
-                let response = try JSONDecoder().decode( WSReturnCarNew.self, from: data)
+                let response = try JSONDecoder().decode( WSReturnBoleia.self, from: data)
                 DispatchQueue.main.async {
                     if(response.Post){
                         let aux = WSInputPropEdit(estado: 2)
