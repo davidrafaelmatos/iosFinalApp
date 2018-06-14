@@ -30,6 +30,11 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
         let result: [WSProposta]
     }
     
+    struct WSResultProp: Decodable, Encodable {
+        let edit: Bool
+        let result: [WSProposta]
+    }
+    
     struct WSProposta: Encodable, Decodable {
         let idProposta: String
         let fkViagem: String
@@ -73,7 +78,22 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
         let idUser: String
     }
     
-    var varAux: Any = ""
+    struct WSInputPropEdit: Encodable, Decodable {
+        let estado: Int
+    }
+    
+    struct WSInputBoleia: Encodable, Decodable {
+        let fkViagem: Int
+        let fkUser: Int
+        let estadoPagamento: Int
+        let estado: Int
+    }
+    
+    struct WSReturnBoleia: Encodable, Decodable {
+        let 
+    }
+    
+    var varAux: dados = dados(origemCoordMasterLat: "", origemCoordMasterLong: "", origemCoordLat: "", origemCoordLong: "", destinoCoordMasterLat: "", destinoCoordMasterLong: "", idViagem: "", idUser: "")
     
     // --
     // End Var
@@ -103,10 +123,13 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     @IBAction func btnCancelar(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueProposta", sender: self)
+        let aux = WSInputPropEdit(estado: 3)
+        deleteProposta(prop: aux)
     }
     
     @IBAction func btnAceitar(_ sender: Any) {
+        let aux = WSInputBoleia(fkViagem: Int(varAux.idViagem)!, fkUser: Int(varAux.idUser)!, estadoPagamento: 0, estado: 1)
+        addBoleia(boleia: aux)
     }
     
     // --
@@ -114,9 +137,6 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
     
     // Functions
     // --
-
-    
-
     
     private func centerMapOnLocation(location: CLLocation){
         let regionRadius: CLLocationDistance = 2000
@@ -252,6 +272,80 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
         }
     }
     
+    private func deleteProposta(prop: WSInputPropEdit){
+        var request = URLRequest(url: URL(string: "http://davidmatos.pt/slimIOS/index.php/proposta/edit/" + String(Global.idProposta))!)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonBody = try JSONEncoder().encode(prop)
+            request.httpBody = jsonBody
+            let jsonBodyString = String(data: jsonBody, encoding: .utf8)
+        } catch {
+            print("error")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("data is empty")
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(WSResultProp.self, from: data)
+                DispatchQueue.main.async {
+                    if(response.edit){
+                        self.performSegue(withIdentifier: "segueProposta", sender: self)
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
+    }
+    
+    private func addBoleia(boleia: WSInputBoleia){
+        var request = URLRequest(url: URL(string: "http://davidmatos.pt/slimIOS/index.php/boleia/new")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let jsonBody = try JSONEncoder().encode(boleia)
+            request.httpBody = jsonBody
+        } catch {
+            print("error")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("data is empty")
+                return
+            }
+            do {
+                let response = try JSONDecoder().decode( WSReturnCarNew.self, from: data)
+                DispatchQueue.main.async {
+                    if(response.Post){
+                        let aux = WSInputPropEdit(estado: 2)
+                        self.deleteProposta(prop: aux)
+                    }
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
+    }
     
     // --
     // Functions
