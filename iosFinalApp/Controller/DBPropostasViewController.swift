@@ -141,8 +141,6 @@ class DBPropostasViewController: UIViewController, UITableViewDataSource, UITabl
                             }.resume()
                         //-----------------------------------------------------------------
                         //-----------------------------------------------------------------
-                        
-
                     }
                 }
             } catch let jsonError {

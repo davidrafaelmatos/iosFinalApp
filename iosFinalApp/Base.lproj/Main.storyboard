@@ -1608,9 +1608,15 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnAceitar:" destination="Gro-Ct-e0d" eventType="touchUpInside" id="a8u-Iz-aiM"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xre-9X-Oda">
                                 <rect key="frame" x="20" y="84" width="335" height="503"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Gro-Ct-e0d" id="sSi-9P-UZY"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-Iu-yME">
                                 <rect key="frame" x="20" y="607" width="162.5" height="40"/>
@@ -1625,6 +1631,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnCancelar:" destination="Gro-Ct-e0d" eventType="touchUpInside" id="QMg-rb-r98"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1650,6 +1659,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wVw-1f-UHL"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="xre-9X-Oda" id="inp-Pt-slp"/>
+                        <segue destination="dIG-Fo-5dL" kind="presentation" identifier="segueProposta" id="FyF-5d-pUf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPi-ql-3Nj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1887,6 +1900,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FyF-5d-pUf"/>
         <segue reference="A9A-MF-ecD"/>
         <segue reference="dzT-Az-40z"/>
         <segue reference="rXg-OK-vIG"/>
