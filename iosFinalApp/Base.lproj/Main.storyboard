@@ -202,6 +202,9 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="zv4-hv-LCF" kind="presentation" id="duG-X7-anA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1723,6 +1726,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="l9F-i0-4xH" kind="presentation" id="s8T-hr-MZu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw7-fU-SQo">
                                         <rect key="frame" x="5" y="268.5" width="240" height="126.5"/>
@@ -1918,12 +1924,11 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ktz-f0-4dr"/>
         <segue reference="FyF-5d-pUf"/>
         <segue reference="Q9i-Zv-EI4"/>
         <segue reference="dzT-Az-40z"/>
         <segue reference="rXg-OK-vIG"/>
-        <segue reference="keB-Hb-0El"/>
+        <segue reference="oAJ-bD-stu"/>
         <segue reference="pQX-gY-eyg"/>
     </inferredMetricsTieBreakers>
 </document>
