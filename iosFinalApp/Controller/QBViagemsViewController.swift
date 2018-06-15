@@ -127,13 +127,16 @@ class QBViagemsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     private func loadOrigem(idViagem: Int){
         self.geocoder.geocodeAddressString(lblOrigem.text!) {
             (placemarks, error) in
+            print(self.lblOrigem.text!)
+            print(error, "load Viagem")
             self.processResponse(withPlacemarks: placemarks, error: error, idViagem: idViagem)
         }
     }
     
     private func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?, idViagem: Int){
         if let error = error {
-            displayMessage("Occoreu um erro durante o calculo do percurso, por favor tente novamente", type: 1)
+            print(error, "process")
+            displayMessage("Occoreu um erro durante a conversao da localização", type: 1)
         } else {
             var location: CLLocation?
             if let placemarks = placemarks, placemarks.count > 0 {
@@ -181,6 +184,7 @@ class QBViagemsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 let response = try JSONDecoder().decode(WSReturnViagem.self, from: data)
                 DispatchQueue.main.async {
                     for viagem in response.result{
+                        print(viagem)
                         self.listViagem = []
                         if viagem.destinoNome.range(of: self.lblDestino.text!) != nil && viagem.origemNome.range(of: self.lblOrigem.text!) != nil && Int(viagem.idViagem) != -1 {
                             
@@ -209,10 +213,11 @@ class QBViagemsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                                     do {
                                         let response = try JSONDecoder().decode( WSReturnP.self, from: data)
                                         DispatchQueue.main.async {
+                                            print(response.get)
                                             if !response.get {
-                                                let aux = list(origemDestino: "de: " + viagem.origemNome + " para: " + viagem.destinoNome, data: viagem.dataViagem, idHistorico: Int(viagem.idViagem)!, estado: Int(viagem.estado)!, estadoProposta: 0)
-                                                self.listViagem.append(aux)
-                                                self.tableViagens.reloadData()
+                                                    let aux = list(origemDestino: "de: " + viagem.origemNome + " para: " + viagem.destinoNome, data: viagem.dataViagem, idHistorico: Int(viagem.idViagem)!, estado: Int(viagem.estado)!, estadoProposta: 0)
+                                                    self.listViagem.append(aux)
+                                                    self.tableViagens.reloadData()
                                             }
                                         }
                                     } catch let jsonError {

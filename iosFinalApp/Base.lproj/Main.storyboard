@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -139,9 +139,51 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main" translatesAutoresizingMaskIntoConstraints="NO" id="C4q-1l-Tu6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxc-bl-Xb8" userLabel="btnDouBoleia">
+                                <rect key="frame" x="20" y="567" width="162.5" height="50"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-fP-XXY" userLabel="blurDouBoleia">
+                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GBc-O0-76p">
+                                            <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Vff-fP-XXY" firstAttribute="leading" secondItem="Uxc-bl-Xb8" secondAttribute="leading" id="1rs-IG-G6r"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vff-fP-XXY" secondAttribute="bottom" id="Dea-vs-SwG"/>
+                                    <constraint firstItem="Vff-fP-XXY" firstAttribute="top" secondItem="Uxc-bl-Xb8" secondAttribute="top" id="Esh-4r-U7V"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qpj-WZ-TDa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vff-fP-XXY" secondAttribute="trailing" id="oMk-G6-oL3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hle-E3-Bx8" userLabel="btnBoliea">
+                                <rect key="frame" x="192" y="567" width="162.5" height="50"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-HC-Ftq" userLabel="blurQueroBoleia">
+                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RBb-Vl-cjs">
+                                            <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9LY-PU-dhJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="RdU-HC-Ftq" secondAttribute="trailing" id="MeQ-uc-lFM"/>
+                                    <constraint firstAttribute="bottom" secondItem="RdU-HC-Ftq" secondAttribute="bottom" id="OH7-RF-RJT"/>
+                                    <constraint firstItem="RdU-HC-Ftq" firstAttribute="top" secondItem="hle-E3-Bx8" secondAttribute="top" id="WRn-ug-8Wk"/>
+                                    <constraint firstItem="RdU-HC-Ftq" firstAttribute="leading" secondItem="hle-E3-Bx8" secondAttribute="leading" id="eAw-bE-Z78"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eln-td-nrS">
                                 <rect key="frame" x="20" y="567" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Jir-Ia-AKK"/>
                                 </constraints>
@@ -149,17 +191,13 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="MCq-0x-GPc" kind="presentation" identifier="segueQBMain" id="oAJ-bD-stu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-mY-VPs">
                                 <rect key="frame" x="195" y="567" width="160" height="50"/>
-                                <color key="backgroundColor" name="Cor Letras"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fXn-NW-5A9"/>
                                 </constraints>
@@ -167,10 +205,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="zv4-hv-LCF" kind="presentation" id="duG-X7-anA"/>
                                 </connections>
@@ -178,19 +212,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hle-E3-Bx8" firstAttribute="leading" secondItem="Uxc-bl-Xb8" secondAttribute="trailing" constant="10" id="2mA-CW-zlz"/>
                             <constraint firstItem="w8N-xb-dUb" firstAttribute="bottom" secondItem="K7S-mY-VPs" secondAttribute="bottom" constant="50" id="3HA-7n-4KX"/>
+                            <constraint firstItem="w8N-xb-dUb" firstAttribute="bottom" secondItem="Uxc-bl-Xb8" secondAttribute="bottom" constant="50" id="5fb-co-Png"/>
                             <constraint firstItem="Eln-td-nrS" firstAttribute="leading" secondItem="w8N-xb-dUb" secondAttribute="leading" constant="20" id="7ZU-Zg-7Ke"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="top" secondItem="w8N-xb-dUb" secondAttribute="top" id="8Gh-jp-zwt"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="leading" secondItem="w8N-xb-dUb" secondAttribute="leading" id="8mq-GD-SrK"/>
                             <constraint firstItem="K7S-mY-VPs" firstAttribute="leading" secondItem="Eln-td-nrS" secondAttribute="trailing" constant="15" id="96s-0H-qrS"/>
+                            <constraint firstItem="w8N-xb-dUb" firstAttribute="bottom" secondItem="hle-E3-Bx8" secondAttribute="bottom" constant="50" id="9iB-wC-qeX"/>
+                            <constraint firstItem="Uxc-bl-Xb8" firstAttribute="leading" secondItem="w8N-xb-dUb" secondAttribute="leading" constant="20" id="Obv-ql-QFx"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="trailing" secondItem="w8N-xb-dUb" secondAttribute="trailing" id="a6n-Hj-6rJ"/>
                             <constraint firstItem="w8N-xb-dUb" firstAttribute="bottom" secondItem="Eln-td-nrS" secondAttribute="bottom" constant="50" id="aQg-tK-A6X"/>
                             <constraint firstItem="Eln-td-nrS" firstAttribute="width" secondItem="K7S-mY-VPs" secondAttribute="width" id="bse-Eg-OZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="hle-E3-Bx8" secondAttribute="trailing" constant="20" id="pyw-1N-aOV"/>
                             <constraint firstItem="C4q-1l-Tu6" firstAttribute="bottom" secondItem="w8N-xb-dUb" secondAttribute="bottom" id="spB-gu-CGq"/>
+                            <constraint firstItem="hle-E3-Bx8" firstAttribute="width" secondItem="Uxc-bl-Xb8" secondAttribute="width" id="wZF-Ua-JLm"/>
+                            <constraint firstItem="hle-E3-Bx8" firstAttribute="height" secondItem="Uxc-bl-Xb8" secondAttribute="height" id="x8M-o1-Zid"/>
                             <constraint firstItem="w8N-xb-dUb" firstAttribute="trailing" secondItem="K7S-mY-VPs" secondAttribute="trailing" constant="20" id="yjQ-gQ-Yn8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w8N-xb-dUb"/>
                     </view>
+                    <connections>
+                        <outlet property="blurDB" destination="Vff-fP-XXY" id="fxL-Wd-jIW"/>
+                        <outlet property="blurQB" destination="RdU-HC-Ftq" id="uK7-Ay-p3s"/>
+                        <outlet property="btnDB" destination="Uxc-bl-Xb8" id="9hs-bC-pds"/>
+                        <outlet property="btnQB" destination="hle-E3-Bx8" id="byA-FC-gul"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRw-G6-CGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2234,13 +2281,13 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gFN-ny-xpe"/>
+        <segue reference="eux-W9-Uz4"/>
         <segue reference="UVs-Fa-sKd"/>
         <segue reference="7GN-i4-wjE"/>
-        <segue reference="Q9i-Zv-EI4"/>
+        <segue reference="A9A-MF-ecD"/>
         <segue reference="FDw-Z3-WYa"/>
-        <segue reference="np3-Eg-7iv"/>
-        <segue reference="keB-Hb-0El"/>
-        <segue reference="pQX-gY-eyg"/>
+        <segue reference="rXg-OK-vIG"/>
+        <segue reference="oAJ-bD-stu"/>
+        <segue reference="8J3-I3-Ctg"/>
     </inferredMetricsTieBreakers>
 </document>

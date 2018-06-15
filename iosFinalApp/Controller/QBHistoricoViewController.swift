@@ -95,7 +95,7 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     //MARK UITableViewDelegate
-    
+    /*
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editar = UITableViewRowAction(style: .default, title: "Propor"){action, index in
             //if !self.lblOrigem.text!.isEmpty {
@@ -105,8 +105,9 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
         editar.backgroundColor = UIColor.blue
         
         return [editar]
+        
     }
-    
+    */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
     }

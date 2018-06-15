@@ -13,11 +13,28 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        blurDB.layer.cornerRadius = 15
+        btnDB.layer.shadowColor = UIColor.black.cgColor
+        btnDB.layer.shadowOpacity = 0.8
+        btnDB.layer.shadowOffset = CGSize(width: 5, height: 0)
+        
+        blurDB.layer.cornerRadius = 15
+        btnQB.layer.shadowColor = UIColor.black.cgColor
+        btnQB.layer.shadowOpacity = 0.8
+        btnQB.layer.shadowOffset = CGSize(width: 5, height: 0)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    // Outlets
+    // --
+    
+    @IBOutlet weak var blurQB: UIVisualEffectView!
+    @IBOutlet weak var btnQB: UIView!
+    @IBOutlet weak var blurDB: UIVisualEffectView!
+    @IBOutlet weak var btnDB: UIView!
+    
+    // --
+    // End Outlets
+    
     
 }

@@ -17,7 +17,6 @@ class DBMainViewController: UIViewController {
     
     @IBOutlet weak var viewConstrant: NSLayoutConstraint!
     @IBOutlet weak var sideView: UIView!
-    
     @IBOutlet weak var blurView: UIVisualEffectView!
     
     // --
