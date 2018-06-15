@@ -8,11 +8,12 @@
 
 import UIKit
 
-class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        self.txtComsumos.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -60,6 +61,13 @@ class DBCarEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     // -- End PickerView
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let allowedCharacters = CharacterSet.init(charactersIn: "0123456789")
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
     
     // Actions
     // --

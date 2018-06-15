@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     var makeArray = [Make]()
     var modelArray = [Model]()
@@ -99,9 +99,16 @@ class DBCarNewViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
+        self.txtComsumos.delegate = self
         // Do any additional setup after loading the view.
         loadMake()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let allowedCharacters = CharacterSet.init(charactersIn: "0123456789.")
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
     
     // WS
