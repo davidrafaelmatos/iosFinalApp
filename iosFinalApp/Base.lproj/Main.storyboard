@@ -634,8 +634,11 @@
                                         </constraints>
                                         <items>
                                             <navigationItem title="Dou Boleia - Veiculos" id="Tip-04-xH3">
-                                                <barButtonItem key="leftBarButtonItem" systemItem="organize" id="BFl-i2-0wu"/>
-                                                <barButtonItem key="rightBarButtonItem" title="Sair" id="1xr-ul-e9e"/>
+                                                <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="BFl-i2-0wu">
+                                                    <connections>
+                                                        <segue destination="MCq-0x-GPc" kind="presentation" id="Ml8-ji-EHG"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -694,35 +697,11 @@
                                             <constraint firstItem="rD5-od-e2P" firstAttribute="top" secondItem="0C2-AY-Ave" secondAttribute="top" constant="20" id="qcm-ye-YeG"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CF1-RZ-6au">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="647"/>
-                                        <subviews>
-                                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pq-BH-P1C">
-                                                <rect key="frame" x="0.0" y="44" width="200" height="603"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DsM-RW-SAA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="603"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </view>
-                                                <blurEffect style="light"/>
-                                            </visualEffectView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="1sk-9S-Fkb"/>
-                                            <constraint firstAttribute="width" constant="200" id="Zev-2B-7sQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="2Pq-BH-P1C" secondAttribute="bottom" id="asf-Tf-LaZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="2Pq-BH-P1C" secondAttribute="trailing" id="bJn-Vo-g6H"/>
-                                            <constraint firstItem="2Pq-BH-P1C" firstAttribute="leading" secondItem="CF1-RZ-6au" secondAttribute="leading" id="d7c-Zq-axS"/>
-                                            <constraint firstItem="2Pq-BH-P1C" firstAttribute="top" secondItem="CF1-RZ-6au" secondAttribute="top" constant="44" id="piA-sW-w8O"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="CF1-RZ-6au" secondAttribute="bottom" id="1gs-jt-AJg"/>
                                     <constraint firstItem="A80-FV-yg2" firstAttribute="top" secondItem="ci1-F0-To4" secondAttribute="top" id="42Q-qA-hqT"/>
                                     <constraint firstAttribute="trailing" secondItem="W9F-c1-l8v" secondAttribute="trailing" id="Agj-oE-hWJ"/>
-                                    <constraint firstItem="CF1-RZ-6au" firstAttribute="leading" secondItem="A80-FV-yg2" secondAttribute="leading" id="As4-Aq-2JP"/>
                                     <constraint firstAttribute="bottom" secondItem="0C2-AY-Ave" secondAttribute="bottom" id="DWR-3e-QE2"/>
                                     <constraint firstAttribute="bottom" secondItem="W9F-c1-l8v" secondAttribute="bottom" id="F30-n1-QpC"/>
                                     <constraint firstItem="0C2-AY-Ave" firstAttribute="leading" secondItem="ci1-F0-To4" secondAttribute="leading" id="HfA-DX-9kK"/>
@@ -732,7 +711,6 @@
                                     <constraint firstItem="W9F-c1-l8v" firstAttribute="top" secondItem="A80-FV-yg2" secondAttribute="bottom" id="hoI-dG-Z8Q"/>
                                     <constraint firstItem="A80-FV-yg2" firstAttribute="leading" secondItem="ci1-F0-To4" secondAttribute="leading" id="mCE-YI-jG3"/>
                                     <constraint firstItem="W9F-c1-l8v" firstAttribute="leading" secondItem="ci1-F0-To4" secondAttribute="leading" id="pAf-Ve-IVe"/>
-                                    <constraint firstItem="CF1-RZ-6au" firstAttribute="top" secondItem="A80-FV-yg2" secondAttribute="top" id="w0q-3v-evq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -746,8 +724,6 @@
                         <viewLayoutGuide key="safeArea" id="uQV-Vr-43c"/>
                     </view>
                     <connections>
-                        <outlet property="constPainel" destination="d7c-Zq-axS" id="UYv-Ma-11Z"/>
-                        <outlet property="contLat" destination="As4-Aq-2JP" id="Y1R-Zg-4cq"/>
                         <outlet property="tableCarros" destination="DkO-yL-ZC4" id="Ljb-0j-CLP"/>
                         <segue destination="bdR-KV-Yo8" kind="presentation" identifier="segueNewCar" id="fmM-jE-ll2"/>
                         <segue destination="5sp-Eo-zp3" kind="presentation" identifier="segueEditCar" id="dzT-Az-40z"/>
@@ -771,7 +747,13 @@
                                     <constraint firstAttribute="height" constant="44" id="HLi-s7-svJ"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Adicionar Veiculo" id="QFZ-qD-lLg"/>
+                                    <navigationItem title="Dou Boleia - Adicionar veiculo" id="txC-VT-qHN">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="m95-AA-Hgi">
+                                            <connections>
+                                                <segue destination="Dtz-up-Ysm" kind="presentation" id="CJ8-MU-bTw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="axh-Ns-sxM">
@@ -900,7 +882,13 @@
                                     <constraint firstAttribute="height" constant="44" id="seR-bj-ts2"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Editar Veiculo" id="Asj-id-mEA"/>
+                                    <navigationItem title="Dou Boleia - Editar Veiculo" id="Asj-id-mEA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="fDF-PT-Vhe">
+                                            <connections>
+                                                <segue destination="Dtz-up-Ysm" kind="presentation" id="np3-Eg-7iv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-v0-1il">
@@ -1019,7 +1007,13 @@
                                     <constraint firstAttribute="height" constant="44" id="08v-OR-rIL"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Historico" id="Lhi-dl-boq"/>
+                                    <navigationItem title="Dou Boleia - Historico" id="Lhi-dl-boq">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="Jk3-Qc-3VB">
+                                            <connections>
+                                                <segue destination="MCq-0x-GPc" kind="presentation" id="cUk-yi-8yM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-Fj-TcM">
@@ -1086,7 +1080,13 @@
                                     <constraint firstAttribute="height" constant="44" id="X47-Nh-69Z"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Historico" id="Obs-O7-LCV"/>
+                                    <navigationItem title="Dou Boleia - Historico" id="Obs-O7-LCV">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="o1U-9l-PK0">
+                                            <connections>
+                                                <segue destination="DIN-PU-Nbj" kind="presentation" id="cJl-in-mHZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="DjF-Zr-BuN">
@@ -1267,7 +1267,13 @@
                                     <constraint firstAttribute="height" constant="44" id="dj9-Ud-NFp"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Viagem" id="Y7N-r1-zHT"/>
+                                    <navigationItem title="Dou Boleia - Viagem" id="Y7N-r1-zHT">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="VAk-gu-aCK">
+                                            <connections>
+                                                <segue destination="MCq-0x-GPc" kind="presentation" id="JaW-KA-cGT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="dvN-SS-t3H">
@@ -1438,7 +1444,13 @@
                                     <constraint firstAttribute="height" constant="44" id="Dl3-4X-8pp"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Viagem" id="Uf4-32-tqF"/>
+                                    <navigationItem title="Dou Boleia - Viagem" id="Uf4-32-tqF">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="fcQ-nG-Rd9">
+                                            <connections>
+                                                <segue destination="1Td-6r-UmZ" kind="presentation" id="sfq-8O-dJ2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-wl-wtE">
@@ -1531,7 +1543,13 @@
                                     <constraint firstAttribute="height" constant="44" id="bDo-OJ-1xN"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Propostas" id="tTM-8n-5wB"/>
+                                    <navigationItem title="Dou Boleia - Propostas" id="tTM-8n-5wB">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="CfE-3o-Zkr">
+                                            <connections>
+                                                <segue destination="MCq-0x-GPc" kind="presentation" id="O4x-h9-2QH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="YG6-QY-sE0">
@@ -1598,7 +1616,13 @@
                                     <constraint firstAttribute="height" constant="44" id="k1H-cY-oGc"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Dou Boleia - Proposta Detalhes" id="3cc-gR-ezk"/>
+                                    <navigationItem title="Dou Boleia - Proposta Detalhes" id="3cc-gR-ezk">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="aAY-Nl-oOV">
+                                            <connections>
+                                                <segue destination="dIG-Fo-5dL" kind="presentation" id="TKe-YK-ceQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="tdB-mR-Cgl">
@@ -1691,7 +1715,13 @@
                                     <constraint firstAttribute="height" constant="44" id="nyb-h5-mtx"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Pagina Inicial Quero Boleia" id="MU1-BW-b4t"/>
+                                    <navigationItem title="Pagina Inicial Quero Boleia" id="MU1-BW-b4t">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="ZqY-1b-OqR">
+                                            <connections>
+                                                <action selector="btnSideBar:" destination="zv4-hv-LCF" id="KwP-I0-8TC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="dng-L3-c2r">
@@ -1774,9 +1804,33 @@
                                     <constraint firstItem="CK6-5T-QAg" firstAttribute="top" secondItem="PNT-8G-kjY" secondAttribute="bottom" constant="5" id="yWr-Ar-8zX"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4y-pq-RHQ" userLabel="SideView">
+                                <rect key="frame" x="-200" y="64" width="200" height="603"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykz-sd-eL1">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="603"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xhQ-rn-6Fc">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="603"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ykz-sd-eL1" secondAttribute="bottom" id="4DF-1o-CcR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ykz-sd-eL1" secondAttribute="trailing" id="6Nf-4v-rlO"/>
+                                    <constraint firstAttribute="width" constant="200" id="AG9-Sl-D73"/>
+                                    <constraint firstItem="Ykz-sd-eL1" firstAttribute="leading" secondItem="h4y-pq-RHQ" secondAttribute="leading" id="BIL-fn-jSz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Dgo-7L-wyP"/>
+                                    <constraint firstItem="Ykz-sd-eL1" firstAttribute="top" secondItem="h4y-pq-RHQ" secondAttribute="top" id="acn-kk-phC"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="dWx-PX-Ige"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="h4y-pq-RHQ" firstAttribute="top" secondItem="Dx1-7N-b0s" secondAttribute="bottom" id="Arj-xv-C6v"/>
                             <constraint firstItem="dng-L3-c2r" firstAttribute="top" secondItem="Dx1-7N-b0s" secondAttribute="bottom" id="Esu-he-O7D"/>
                             <constraint firstItem="0dC-1E-9dW" firstAttribute="trailing" secondItem="dng-L3-c2r" secondAttribute="trailing" id="Exf-iu-tgj"/>
                             <constraint firstItem="Dx1-7N-b0s" firstAttribute="leading" secondItem="0dC-1E-9dW" secondAttribute="leading" id="QfT-J0-hp3"/>
@@ -1785,12 +1839,24 @@
                             <constraint firstItem="0dC-1E-9dW" firstAttribute="bottom" secondItem="dng-L3-c2r" secondAttribute="bottom" id="Zpk-RO-gXC"/>
                             <constraint firstAttribute="trailing" secondItem="Dx1-7N-b0s" secondAttribute="trailing" id="bEV-nh-Ery"/>
                             <constraint firstItem="DE3-oF-OS5" firstAttribute="centerY" secondItem="izD-Nr-rsf" secondAttribute="centerY" id="f12-rr-r5l"/>
+                            <constraint firstItem="h4y-pq-RHQ" firstAttribute="leading" secondItem="0dC-1E-9dW" secondAttribute="leading" constant="-200" id="gj6-PT-Z4S"/>
+                            <constraint firstItem="0dC-1E-9dW" firstAttribute="bottom" secondItem="h4y-pq-RHQ" secondAttribute="bottom" id="tuL-2M-ULY"/>
                             <constraint firstItem="Dx1-7N-b0s" firstAttribute="top" secondItem="0dC-1E-9dW" secondAttribute="top" id="zoK-uN-4dg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0dC-1E-9dW"/>
                     </view>
+                    <connections>
+                        <outlet property="blurView" destination="Ykz-sd-eL1" id="jkH-Z4-bhe"/>
+                        <outlet property="sideView" destination="h4y-pq-RHQ" id="S0u-ea-Tda"/>
+                        <outlet property="sideViewConstrain" destination="gj6-PT-Z4S" id="noL-mt-MwE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZI-OG-AcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="hJJ-5p-XJo">
+                    <connections>
+                        <action selector="PanPerformed:" destination="zv4-hv-LCF" id="I46-Xr-7XX"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="723.68815592203907"/>
         </scene>
@@ -1808,7 +1874,13 @@
                                     <constraint firstAttribute="height" constant="44" id="Q41-jE-XEq"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Quero Boleia - Viagens" id="lic-vX-XHL"/>
+                                    <navigationItem title="Quero Boleia - Viagens" id="lic-vX-XHL">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="o6Q-DZ-KUO">
+                                            <connections>
+                                                <segue destination="zv4-hv-LCF" kind="presentation" id="eux-W9-Uz4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="ExJ-Pr-SaC">
@@ -1910,6 +1982,117 @@
             </objects>
             <point key="canvasLocation" x="1613.5999999999999" y="723.68815592203907"/>
         </scene>
+        <!--DBCarro-->
+        <scene sceneID="jdE-4s-Gdp">
+            <objects>
+                <viewController title="DBCarro" id="End-Y2-9hd" customClass="DBCarViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lea-eq-ZOl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpI-LC-aNU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-5M-icX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="nXs-JW-033"/>
+                                        </constraints>
+                                        <items>
+                                            <navigationItem title="Dou Boleia - Veiculos" id="NKA-7c-zcQ">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="syn-9R-VdZ"/>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="iIJ-ok-IgX">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0u-tn-1ZG">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Os Meus Veiculos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAg-U9-w3h">
+                                                <rect key="frame" x="120" y="20" width="136" height="21"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-Kx-dbD">
+                                                <rect key="frame" x="20" y="51" width="335" height="472"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="End-Y2-9hd" id="iec-XA-5dS"/>
+                                                    <outlet property="delegate" destination="End-Y2-9hd" id="dY5-U1-Irf"/>
+                                                </connections>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pww-VA-Gba">
+                                                <rect key="frame" x="20" y="543" width="335" height="40"/>
+                                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="u38-GV-61r"/>
+                                                </constraints>
+                                                <state key="normal" title="Adicionar um Veiculo">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnNewCar:" destination="End-Y2-9hd" eventType="touchUpInside" id="Fl0-Md-P1c"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="UAg-U9-w3h" firstAttribute="centerX" secondItem="Z0u-tn-1ZG" secondAttribute="centerX" id="BPm-oP-Poa"/>
+                                            <constraint firstItem="jpf-Kx-dbD" firstAttribute="top" secondItem="UAg-U9-w3h" secondAttribute="bottom" constant="10" id="Hbd-TN-CAY"/>
+                                            <constraint firstItem="jpf-Kx-dbD" firstAttribute="leading" secondItem="Z0u-tn-1ZG" secondAttribute="leading" constant="20" id="NbZ-vh-hdS"/>
+                                            <constraint firstItem="pww-VA-Gba" firstAttribute="leading" secondItem="Z0u-tn-1ZG" secondAttribute="leading" constant="20" id="Oau-FX-S0j"/>
+                                            <constraint firstAttribute="bottom" secondItem="pww-VA-Gba" secondAttribute="bottom" constant="20" id="PFb-cp-4K7"/>
+                                            <constraint firstAttribute="trailing" secondItem="pww-VA-Gba" secondAttribute="trailing" constant="20" id="VYA-8V-gI0"/>
+                                            <constraint firstAttribute="trailing" secondItem="jpf-Kx-dbD" secondAttribute="trailing" constant="20" id="Xgg-4Q-Skb"/>
+                                            <constraint firstItem="jpf-Kx-dbD" firstAttribute="top" secondItem="UAg-U9-w3h" secondAttribute="bottom" constant="10" id="dIQ-CR-gOz"/>
+                                            <constraint firstItem="pww-VA-Gba" firstAttribute="centerX" secondItem="Z0u-tn-1ZG" secondAttribute="centerX" id="fOK-sb-4L9"/>
+                                            <constraint firstItem="UAg-U9-w3h" firstAttribute="top" secondItem="Z0u-tn-1ZG" secondAttribute="top" constant="20" id="ppU-cT-9S8"/>
+                                            <constraint firstItem="pww-VA-Gba" firstAttribute="top" secondItem="jpf-Kx-dbD" secondAttribute="bottom" constant="20" id="ymk-95-zqw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iIJ-ok-IgX" secondAttribute="bottom" id="5jU-Ya-zpk"/>
+                                    <constraint firstAttribute="trailing" secondItem="z7q-5M-icX" secondAttribute="trailing" id="6jV-yA-mas"/>
+                                    <constraint firstItem="Z0u-tn-1ZG" firstAttribute="leading" secondItem="YpI-LC-aNU" secondAttribute="leading" id="8Ju-Du-Qcr"/>
+                                    <constraint firstItem="z7q-5M-icX" firstAttribute="leading" secondItem="YpI-LC-aNU" secondAttribute="leading" id="M3X-uI-zpf"/>
+                                    <constraint firstItem="z7q-5M-icX" firstAttribute="top" secondItem="YpI-LC-aNU" secondAttribute="top" id="QMg-fD-XaX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z0u-tn-1ZG" secondAttribute="trailing" id="Qee-7q-KYO"/>
+                                    <constraint firstItem="iIJ-ok-IgX" firstAttribute="top" secondItem="z7q-5M-icX" secondAttribute="bottom" id="aoL-kr-pp3"/>
+                                    <constraint firstItem="Z0u-tn-1ZG" firstAttribute="top" secondItem="z7q-5M-icX" secondAttribute="bottom" id="m3c-tD-4da"/>
+                                    <constraint firstItem="iIJ-ok-IgX" firstAttribute="leading" secondItem="YpI-LC-aNU" secondAttribute="leading" id="pRq-GH-y1p"/>
+                                    <constraint firstAttribute="trailing" secondItem="iIJ-ok-IgX" secondAttribute="trailing" id="uuv-AC-kMd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z0u-tn-1ZG" secondAttribute="bottom" id="wvr-RW-6UU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YpI-LC-aNU" secondAttribute="trailing" id="RiI-aO-lhM"/>
+                            <constraint firstItem="ZmS-Eg-PXi" firstAttribute="bottom" secondItem="YpI-LC-aNU" secondAttribute="bottom" id="SED-JU-bH2"/>
+                            <constraint firstItem="YpI-LC-aNU" firstAttribute="leading" secondItem="ZmS-Eg-PXi" secondAttribute="leading" id="bDX-kK-40Y"/>
+                            <constraint firstItem="YpI-LC-aNU" firstAttribute="top" secondItem="ZmS-Eg-PXi" secondAttribute="top" id="ykj-Od-Lmq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZmS-Eg-PXi"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableCarros" destination="jpf-Kx-dbD" id="uOW-fg-WFh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUh-80-0w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="724"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BGBoleia" width="960" height="638"/>
@@ -1924,11 +2107,14 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FyF-5d-pUf"/>
-        <segue reference="Q9i-Zv-EI4"/>
+        <segue reference="s8T-hr-MZu"/>
+        <segue reference="eux-W9-Uz4"/>
+        <segue reference="UVs-Fa-sKd"/>
+        <segue reference="7GN-i4-wjE"/>
+        <segue reference="A9A-MF-ecD"/>
         <segue reference="dzT-Az-40z"/>
         <segue reference="rXg-OK-vIG"/>
-        <segue reference="oAJ-bD-stu"/>
+        <segue reference="Ml8-ji-EHG"/>
         <segue reference="pQX-gY-eyg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -28,8 +28,6 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
     // --
     
     @IBOutlet weak var tableCarros: UITableView!
-    @IBOutlet weak var constPainel: NSLayoutConstraint!
-    @IBOutlet weak var contLat: NSLayoutConstraint!
     
     // --
     // End Outlets
@@ -45,8 +43,6 @@ class DBCarViewController: UIViewController, UITableViewDataSource, UITableViewD
     // End Actions
     override func viewDidLoad() {
         super.viewDidLoad()
-        constPainel.constant = -200
-        contLat.constant = -200
         loadCars()
         // Do any additional setup after loading the view.
     }
