@@ -32,7 +32,7 @@ class DBPropostasDetalheViewController: UIViewController, MKMapViewDelegate, CLL
     
     struct WSResultProp: Decodable, Encodable {
         let edit: Bool
-        let result: [WSProposta]
+        let prop: [WSProposta]
     }
     
     struct WSProposta: Encodable, Decodable {

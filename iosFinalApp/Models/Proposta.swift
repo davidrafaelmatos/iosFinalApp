@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct Propossta : Decodable, Encodable{
+struct Proposta : Decodable, Encodable{
     let fkBoleia: Int
     let fkUser: Int
-    let estado: Int //0 para pendente, 1 para aceite, 2 para recusado
+    let estado: Int //0 para eliminado, 1 para pendente, 2 para aceite, 3 para recusado
 }

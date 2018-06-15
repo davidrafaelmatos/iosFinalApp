@@ -18,13 +18,17 @@ class QBViagemsViewController: UIViewController {
     
     // Outlets
     // --
-    
-    
+    @IBOutlet weak var lblOrigem: UITextField!
+    @IBOutlet weak var lblDestino: UITextField!
+    @IBOutlet weak var tableViagens: UITableView!
+
     // --
     // End Outlets
     
     // Actions
     // --
+    @IBAction func btnSearch(_ sender: Any) {
+    }
     
     
     // --
@@ -32,6 +36,7 @@ class QBViagemsViewController: UIViewController {
     
     // Functions
     // --
+    
     
     
     // --

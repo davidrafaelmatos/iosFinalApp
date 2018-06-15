@@ -59,7 +59,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-5t-H4c">
-                                        <rect key="frame" x="20" y="287" width="102.5" height="30"/>
+                                        <rect key="frame" x="20" y="276" width="102.5" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Entrar">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,17 +74,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1E-LS-k92">
-                                        <rect key="frame" x="20" y="236" width="97" height="31"/>
+                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1E-LS-k92">
+                                        <rect key="frame" x="20" y="236" width="97" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="QKt-4a-omh"/>
+                                        </constraints>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lembrar-me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4m-kc-nVb">
-                                        <rect key="frame" x="135" y="236" width="95" height="21"/>
+                                        <rect key="frame" x="135" y="236" width="95" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="F2l-PF-1eK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOj-v5-KLy">
-                                        <rect key="frame" x="127" y="287" width="102.5" height="30"/>
+                                        <rect key="frame" x="127" y="276" width="102.5" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Registar">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1782,10 +1788,10 @@
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="723.68815592203907"/>
         </scene>
-        <!--DBCarroNew-->
+        <!--QBViagem-->
         <scene sceneID="zLc-qV-TB9">
             <objects>
-                <viewController title="DBCarroNew" id="l9F-i0-4xH" customClass="QBViagemsViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="QBViagem" id="l9F-i0-4xH" customClass="QBViagemsViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yf2-Gf-hvx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1842,10 +1848,17 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerBorder" value="15"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSearch:" destination="l9F-i0-4xH" eventType="touchUpInside" id="HxY-U3-Lsn"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-ws-9Km">
                                 <rect key="frame" x="20" y="238" width="335" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="l9F-i0-4xH" id="0TU-sy-vLf"/>
+                                    <outlet property="delegate" destination="l9F-i0-4xH" id="OgG-WQ-kJ8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1881,6 +1894,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o7J-1W-zd6"/>
                     </view>
+                    <connections>
+                        <outlet property="lblDestino" destination="gNU-My-gId" id="WmG-k9-Hcp"/>
+                        <outlet property="lblOrigem" destination="xFQ-fC-WNg" id="qb9-Wl-o6b"/>
+                        <outlet property="tableViagens" destination="kOs-ws-9Km" id="ueQ-0F-kEC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjC-vh-jhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1900,11 +1918,12 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ktz-f0-4dr"/>
         <segue reference="FyF-5d-pUf"/>
-        <segue reference="A9A-MF-ecD"/>
+        <segue reference="Q9i-Zv-EI4"/>
         <segue reference="dzT-Az-40z"/>
         <segue reference="rXg-OK-vIG"/>
-        <segue reference="wsA-jp-OHv"/>
-        <segue reference="27q-fu-oFG"/>
+        <segue reference="keB-Hb-0El"/>
+        <segue reference="pQX-gY-eyg"/>
     </inferredMetricsTieBreakers>
 </document>
