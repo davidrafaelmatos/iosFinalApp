@@ -20,6 +20,7 @@
 		8810C32A20CD9DB300ED9B53 /* DBPropostasDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C32920CD9DB300ED9B53 /* DBPropostasDetalheViewController.swift */; };
 		8810C32C20CDAC9200ED9B53 /* QBViagemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810C32B20CDAC9200ED9B53 /* QBViagemsViewController.swift */; };
 		8821D42E20D36DF7002E34FB /* QBHistoricoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8821D42D20D36DF7002E34FB /* QBHistoricoViewController.swift */; };
+		8821D43020D37726002E34FB /* QBPropostasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8821D42F20D37726002E34FB /* QBPropostasViewController.swift */; };
 		882B407120CC4EFF00715BE5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882B407020CC4EFF00715BE5 /* Media.xcassets */; };
 		882B407520CC753A00715BE5 /* DBCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B407420CC753A00715BE5 /* DBCarViewController.swift */; };
 		882B407A20CC852D00715BE5 /* ModelReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B407920CC852D00715BE5 /* ModelReturn.swift */; };
@@ -64,6 +65,7 @@
 		8810C32920CD9DB300ED9B53 /* DBPropostasDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPropostasDetalheViewController.swift; sourceTree = "<group>"; };
 		8810C32B20CDAC9200ED9B53 /* QBViagemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBViagemsViewController.swift; sourceTree = "<group>"; };
 		8821D42D20D36DF7002E34FB /* QBHistoricoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBHistoricoViewController.swift; sourceTree = "<group>"; };
+		8821D42F20D37726002E34FB /* QBPropostasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBPropostasViewController.swift; sourceTree = "<group>"; };
 		882B407020CC4EFF00715BE5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		882B407420CC753A00715BE5 /* DBCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCarViewController.swift; sourceTree = "<group>"; };
 		882B407920CC852D00715BE5 /* ModelReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelReturn.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				8810C32920CD9DB300ED9B53 /* DBPropostasDetalheViewController.swift */,
 				8810C32B20CDAC9200ED9B53 /* QBViagemsViewController.swift */,
 				8821D42D20D36DF7002E34FB /* QBHistoricoViewController.swift */,
+				8821D42F20D37726002E34FB /* QBPropostasViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				88E6967320CC36C20045A1D3 /* MakeReturn.swift in Sources */,
 				88DAAA2B20D085C80026E9FD /* WSReturnViagem.swift in Sources */,
 				8810C32020CD855700ED9B53 /* Proposta.swift in Sources */,
+				8821D43020D37726002E34FB /* QBPropostasViewController.swift in Sources */,
 				8810C31A20CD81E400ED9B53 /* DBHistoricoDetalheViewController.swift in Sources */,
 				882B407A20CC852D00715BE5 /* ModelReturn.swift in Sources */,
 				88E6966F20CC269E0045A1D3 /* Make.swift in Sources */,

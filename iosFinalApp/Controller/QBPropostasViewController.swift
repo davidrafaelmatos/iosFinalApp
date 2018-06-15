@@ -1,5 +1,5 @@
 //
-//  QBHistoricoViewController.swift
+//  QBPropostasViewController.swift
 //  iosFinalApp
 //
 //  Created by DocAdmin on 6/15/18.
@@ -8,34 +8,35 @@
 
 import UIKit
 
-class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class QBPropostasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadBoleia()
+        loadPropostas()
         // Do any additional setup after loading the view.
     }
 
     // Var
     // --
-    
     struct list {
         let origemDestino: String
-        let DataPagamento: String
+        let DataEstado: String
     }
     
     var listViagem:[list] = []
     
-    struct WSReturnBoleia: Encodable, Decodable {
+    struct WSReturnPropostas: Encodable, Decodable {
         let get: Bool
-        let result: [WSBoleia]
+        let result: [WSProposta]
     }
     
-    struct WSBoleia: Encodable, Decodable {
+    struct WSProposta: Encodable, Decodable {
         let fkViagem: String
         let fkUser: String
-        let estadoPagamento: String
         let estado: String
+        let origemNome: String
+        let origemCoordLat: String
+        let origemCoordLong: String
     }
     
     struct WSReturnViagem: Encodable, Decodable {
@@ -43,7 +44,7 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
         let result: [WSViagem]
     }
     
-    struct WSViagem: Decodable, Encodable {
+    struct WSViagem: Encodable, Decodable {
         let origemNome: String
         let origemCoordLat: String
         let origemCoordLong: String
@@ -64,9 +65,8 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
     
     // Outlets
     // --
-    @IBOutlet weak var tableHistorico: UITableView!
     
-    
+    @IBOutlet weak var tablePropostas: UITableView!
     
     // --
     // End Outlets
@@ -90,13 +90,13 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
         cell.textLabel?.text = listViagem[indexPath.row].origemDestino
-        cell.detailTextLabel?.text = listViagem[indexPath.row].DataPagamento
+        cell.detailTextLabel?.text = listViagem[indexPath.row].DataEstado
         return cell
     }
     
     //MARK UITableViewDelegate
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    /*func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editar = UITableViewRowAction(style: .default, title: "Propor"){action, index in
             //if !self.lblOrigem.text!.isEmpty {
             //    self.loadOrigem(idViagem: self.listViagem[indexPath.row].idHistorico)
@@ -104,49 +104,59 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
         }
         editar.backgroundColor = UIColor.blue
         
-        return [editar]
-    }
+        //return [editar]
+    }*/
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
     }
     
-    private func loadBoleia(){
-        let urlString = "http://davidmatos.pt/slimIOS/index.php/boleiaByIdUser/" + String(Global.idUser)
+    private func loadPropostas(){
+        let urlString = "http://davidmatos.pt/slimIOS/index.php/propostasByIdUser/" + String(Global.idUser)
+        print(urlString)
         guard let url = URL(string: urlString) else { return }
+        
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
             }
+            
             guard let data = data else { return }
+            
             do {
-                let response = try JSONDecoder().decode(WSReturnBoleia.self, from: data)
+                let response = try JSONDecoder().decode(WSReturnPropostas.self, from: data)
                 DispatchQueue.main.async {
-                    for boleia in response.result{
-                        print(boleia, "fs")
-                        let urlString = "http://davidmatos.pt/slimIOS/index.php/viagem/" + boleia.fkViagem
+                    for proposta in response.result{
+                        let urlString = "http://davidmatos.pt/slimIOS/index.php/viagem/" + proposta.fkViagem
+                        print(urlString)
                         guard let url = URL(string: urlString) else { return }
+                        
                         URLSession.shared.dataTask(with: url) {
                             (data, response, error) in
                             if error != nil {
                                 print(error!.localizedDescription)
                             }
+                            
                             guard let data = data else { return }
+                            
                             do {
                                 let response = try JSONDecoder().decode(WSReturnViagem.self, from: data)
                                 DispatchQueue.main.async {
+                                    var est = ""
                                     for viagem in response.result{
-                                        print(viagem, "fds")
-                                        var pag: String = ""
-                                        if Int(boleia.estadoPagamento) == 0 {
-                                            pag = "Pendente"
-                                        }else{
-                                            pag = "Pago"
+                                        switch Int(proposta.estado){
+                                        case 1:
+                                            est = "Pendente"
+                                        case 2:
+                                            est = "Aceite"
+                                        default:
+                                            est = "Recusado"
                                         }
-                                        let aux = list(origemDestino: "De: " + viagem.origemNome + " Para: " + viagem.destinoNome, DataPagamento: viagem.dataViagem + " " + pag)
+                                        
+                                        let aux = list(origemDestino: "De " + viagem.origemNome + " Para " + viagem.destinoNome, DataEstado: viagem.dataViagem + " Estado: " + est)
                                         self.listViagem.append(aux)
-                                        self.tableHistorico.reloadData()
+                                        self.tablePropostas.reloadData()
                                     }
                                 }
                             } catch let jsonError {
@@ -160,12 +170,10 @@ class QBHistoricoViewController: UIViewController, UITableViewDataSource, UITabl
                 print(jsonError)
             }
             
-        }.resume()
+            }.resume()
     }
     
     // --
     // End Functions
-    
-    
-    
+
 }

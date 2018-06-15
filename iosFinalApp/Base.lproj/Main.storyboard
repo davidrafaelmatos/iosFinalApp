@@ -439,7 +439,12 @@
                                                 <action selector="btnSideView:" destination="MCq-0x-GPc" id="I5f-VA-Tyw"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Sair" width="5" id="7Tc-Kt-IUW"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" width="5" id="7Tc-Kt-IUW">
+                                            <connections>
+                                                <action selector="btnSair:" destination="MCq-0x-GPc" id="qAY-8o-mwD"/>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="X3C-a0-hPg"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -639,6 +644,11 @@
                                                         <segue destination="MCq-0x-GPc" kind="presentation" id="Ml8-ji-EHG"/>
                                                     </connections>
                                                 </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Inicio" id="jtW-Oh-8zZ">
+                                                    <connections>
+                                                        <segue destination="xlm-zf-whU" kind="presentation" id="iAR-Dp-dRB"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -648,16 +658,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0C2-AY-Ave">
                                         <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Os Meus Veiculos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rD5-od-e2P">
-                                                <rect key="frame" x="120" y="20" width="136" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Os Meus Veiculos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rD5-od-e2P">
+                                                <rect key="frame" x="113" y="20" width="150" height="30"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="4Ng-Sm-f0S"/>
+                                                    <constraint firstAttribute="height" constant="30" id="LTN-Dl-Fzl"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DkO-yL-ZC4">
-                                                <rect key="frame" x="20" y="51" width="335" height="472"/>
+                                                <rect key="frame" x="20" y="60" width="335" height="463"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="Dtz-up-Ysm" id="xm9-Ax-Gdz"/>
@@ -751,6 +765,11 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="m95-AA-Hgi">
                                             <connections>
                                                 <segue destination="Dtz-up-Ysm" kind="presentation" id="CJ8-MU-bTw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="wna-V5-ocO">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="fzQ-Q2-0oh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -888,6 +907,11 @@
                                                 <segue destination="Dtz-up-Ysm" kind="presentation" id="np3-Eg-7iv"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="ZfW-4i-gWE">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="xPe-Md-RNn"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1013,6 +1037,11 @@
                                                 <segue destination="MCq-0x-GPc" kind="presentation" id="cUk-yi-8yM"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="tAe-bF-OTl">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="zSf-Oz-8Jb"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1064,7 +1093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yX0-8x-3El" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4602" y="28"/>
+            <point key="canvasLocation" x="4600.8000000000002" y="27.436281859070466"/>
         </scene>
         <!--DBHistoricoDetalhe-->
         <scene sceneID="gv0-c6-OkH">
@@ -1086,6 +1115,7 @@
                                                 <segue destination="DIN-PU-Nbj" kind="presentation" id="cJl-in-mHZ"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="5FF-Yb-9N6"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1273,6 +1303,11 @@
                                                 <segue destination="MCq-0x-GPc" kind="presentation" id="JaW-KA-cGT"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="jgS-U2-ZsW">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="Axe-tk-yCy"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1450,6 +1485,11 @@
                                                 <segue destination="1Td-6r-UmZ" kind="presentation" id="sfq-8O-dJ2"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="GBD-dZ-t19">
+                                            <connections>
+                                                <segue destination="MCq-0x-GPc" kind="presentation" id="QiK-IJ-x2Y"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1549,6 +1589,11 @@
                                                 <segue destination="MCq-0x-GPc" kind="presentation" id="O4x-h9-2QH"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="m0C-F4-HMB">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="fIF-7L-tQ2"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1620,6 +1665,11 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="aAY-Nl-oOV">
                                             <connections>
                                                 <segue destination="dIG-Fo-5dL" kind="presentation" id="TKe-YK-ceQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="bpa-fv-zYo">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="duv-el-cyx"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1721,6 +1771,11 @@
                                                 <action selector="btnSideBar:" destination="zv4-hv-LCF" id="KwP-I0-8TC"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="MmU-V2-KG9">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="bgh-AS-Asz"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1747,6 +1802,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="End-Y2-9hd" kind="presentation" id="SzW-oh-JvY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-WA-q3q">
                                         <rect key="frame" x="5" y="5" width="240" height="126.5"/>
@@ -1768,6 +1826,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="bbo-5K-s9t" kind="presentation" id="JHQ-OO-HW5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1880,6 +1941,11 @@
                                                 <segue destination="zv4-hv-LCF" kind="presentation" id="eux-W9-Uz4"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="PMg-ya-v3m">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="8J3-I3-Ctg"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1982,10 +2048,10 @@
             </objects>
             <point key="canvasLocation" x="1613.5999999999999" y="723.68815592203907"/>
         </scene>
-        <!--DBCarro-->
+        <!--QBHistorico-->
         <scene sceneID="jdE-4s-Gdp">
             <objects>
-                <viewController title="DBCarro" id="End-Y2-9hd" customClass="DBCarViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="QBHistorico" id="End-Y2-9hd" customClass="QBHistoricoViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lea-eq-ZOl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1999,8 +2065,17 @@
                                             <constraint firstAttribute="height" constant="44" id="nXs-JW-033"/>
                                         </constraints>
                                         <items>
-                                            <navigationItem title="Dou Boleia - Veiculos" id="NKA-7c-zcQ">
-                                                <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="syn-9R-VdZ"/>
+                                            <navigationItem title="Quero Boleia - Historico" id="NKA-7c-zcQ">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="syn-9R-VdZ">
+                                                    <connections>
+                                                        <segue destination="zv4-hv-LCF" kind="presentation" id="mdz-Z7-YBG"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Inicio" id="zn7-CW-iwH">
+                                                    <connections>
+                                                        <segue destination="xlm-zf-whU" kind="presentation" id="Ubv-Od-lbq"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -2010,53 +2085,36 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0u-tn-1ZG">
                                         <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Os Meus Veiculos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAg-U9-w3h">
-                                                <rect key="frame" x="120" y="20" width="136" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAg-U9-w3h">
+                                                <rect key="frame" x="113" y="20" width="150" height="30"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="GPw-mz-biy"/>
+                                                    <constraint firstAttribute="width" constant="150" id="ob3-rD-Bct"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-Kx-dbD">
-                                                <rect key="frame" x="20" y="51" width="335" height="472"/>
+                                                <rect key="frame" x="20" y="60" width="335" height="523"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="dataSource" destination="End-Y2-9hd" id="iec-XA-5dS"/>
-                                                    <outlet property="delegate" destination="End-Y2-9hd" id="dY5-U1-Irf"/>
+                                                    <outlet property="dataSource" destination="End-Y2-9hd" id="ts1-qC-5UF"/>
+                                                    <outlet property="delegate" destination="End-Y2-9hd" id="2uX-ah-6Cw"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pww-VA-Gba">
-                                                <rect key="frame" x="20" y="543" width="335" height="40"/>
-                                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="u38-GV-61r"/>
-                                                </constraints>
-                                                <state key="normal" title="Adicionar um Veiculo">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="btnNewCar:" destination="End-Y2-9hd" eventType="touchUpInside" id="Fl0-Md-P1c"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="jpf-Kx-dbD" secondAttribute="bottom" constant="20" id="B3i-54-yEk"/>
                                             <constraint firstItem="UAg-U9-w3h" firstAttribute="centerX" secondItem="Z0u-tn-1ZG" secondAttribute="centerX" id="BPm-oP-Poa"/>
                                             <constraint firstItem="jpf-Kx-dbD" firstAttribute="top" secondItem="UAg-U9-w3h" secondAttribute="bottom" constant="10" id="Hbd-TN-CAY"/>
                                             <constraint firstItem="jpf-Kx-dbD" firstAttribute="leading" secondItem="Z0u-tn-1ZG" secondAttribute="leading" constant="20" id="NbZ-vh-hdS"/>
-                                            <constraint firstItem="pww-VA-Gba" firstAttribute="leading" secondItem="Z0u-tn-1ZG" secondAttribute="leading" constant="20" id="Oau-FX-S0j"/>
-                                            <constraint firstAttribute="bottom" secondItem="pww-VA-Gba" secondAttribute="bottom" constant="20" id="PFb-cp-4K7"/>
-                                            <constraint firstAttribute="trailing" secondItem="pww-VA-Gba" secondAttribute="trailing" constant="20" id="VYA-8V-gI0"/>
                                             <constraint firstAttribute="trailing" secondItem="jpf-Kx-dbD" secondAttribute="trailing" constant="20" id="Xgg-4Q-Skb"/>
                                             <constraint firstItem="jpf-Kx-dbD" firstAttribute="top" secondItem="UAg-U9-w3h" secondAttribute="bottom" constant="10" id="dIQ-CR-gOz"/>
-                                            <constraint firstItem="pww-VA-Gba" firstAttribute="centerX" secondItem="Z0u-tn-1ZG" secondAttribute="centerX" id="fOK-sb-4L9"/>
                                             <constraint firstItem="UAg-U9-w3h" firstAttribute="top" secondItem="Z0u-tn-1ZG" secondAttribute="top" constant="20" id="ppU-cT-9S8"/>
-                                            <constraint firstItem="pww-VA-Gba" firstAttribute="top" secondItem="jpf-Kx-dbD" secondAttribute="bottom" constant="20" id="ymk-95-zqw"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2086,12 +2144,89 @@
                         <viewLayoutGuide key="safeArea" id="ZmS-Eg-PXi"/>
                     </view>
                     <connections>
-                        <outlet property="tableCarros" destination="jpf-Kx-dbD" id="uOW-fg-WFh"/>
+                        <outlet property="tableHistorico" destination="jpf-Kx-dbD" id="KFh-ez-fu4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUh-80-0w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2350" y="724"/>
+        </scene>
+        <!--QBPorposta-->
+        <scene sceneID="9oS-nd-n1G">
+            <objects>
+                <viewController title="QBPorposta" id="bbo-5K-s9t" customClass="QBPropostasViewController" customModule="iosFinalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Ve-cD-wYd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAA-nO-W3e">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6Tq-DH-XEc"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Quero Boleia - Propostas" id="CIc-gb-GpU">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="x8Q-qr-X2Z">
+                                            <connections>
+                                                <segue destination="zv4-hv-LCF" kind="presentation" id="gFN-ny-xpe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Inicio" id="Q1g-r3-Lzm">
+                                            <connections>
+                                                <segue destination="xlm-zf-whU" kind="presentation" id="vwU-2h-fH8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGBoleia" translatesAutoresizingMaskIntoConstraints="NO" id="Cea-Sy-X5i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propostas de Viagem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAw-kW-03Z">
+                                <rect key="frame" x="20" y="84" width="335" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xWX-gC-Pbp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXN-G2-CPf">
+                                <rect key="frame" x="20" y="144" width="335" height="503"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bbo-5K-s9t" id="ibE-3Y-Vag"/>
+                                    <outlet property="delegate" destination="bbo-5K-s9t" id="POT-ZZ-k2J"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HAw-kW-03Z" firstAttribute="top" secondItem="SAA-nO-W3e" secondAttribute="bottom" constant="20" id="1Ni-Kh-hMd"/>
+                            <constraint firstItem="RQB-mo-axN" firstAttribute="trailing" secondItem="Cea-Sy-X5i" secondAttribute="trailing" id="39u-zj-QIA"/>
+                            <constraint firstItem="RQB-mo-axN" firstAttribute="bottom" secondItem="gXN-G2-CPf" secondAttribute="bottom" constant="20" id="4mA-MH-9g6"/>
+                            <constraint firstItem="gXN-G2-CPf" firstAttribute="top" secondItem="HAw-kW-03Z" secondAttribute="bottom" constant="20" id="77R-qn-204"/>
+                            <constraint firstItem="SAA-nO-W3e" firstAttribute="top" secondItem="RQB-mo-axN" secondAttribute="top" id="7ba-Dx-qqo"/>
+                            <constraint firstItem="RQB-mo-axN" firstAttribute="bottom" secondItem="Cea-Sy-X5i" secondAttribute="bottom" id="8bq-AG-rfW"/>
+                            <constraint firstItem="Cea-Sy-X5i" firstAttribute="top" secondItem="SAA-nO-W3e" secondAttribute="bottom" id="K1v-ON-8Vj"/>
+                            <constraint firstAttribute="trailing" secondItem="SAA-nO-W3e" secondAttribute="trailing" id="OH1-jf-rSu"/>
+                            <constraint firstItem="SAA-nO-W3e" firstAttribute="leading" secondItem="RQB-mo-axN" secondAttribute="leading" id="SN4-3f-BDn"/>
+                            <constraint firstItem="RQB-mo-axN" firstAttribute="trailing" secondItem="HAw-kW-03Z" secondAttribute="trailing" constant="20" id="hXp-ZS-1bG"/>
+                            <constraint firstItem="Cea-Sy-X5i" firstAttribute="leading" secondItem="RQB-mo-axN" secondAttribute="leading" id="jYZ-IG-dL6"/>
+                            <constraint firstItem="HAw-kW-03Z" firstAttribute="leading" secondItem="RQB-mo-axN" secondAttribute="leading" constant="20" id="sV7-kw-XIi"/>
+                            <constraint firstAttribute="trailing" secondItem="gXN-G2-CPf" secondAttribute="trailing" constant="20" id="vt7-4j-iAU"/>
+                            <constraint firstItem="gXN-G2-CPf" firstAttribute="leading" secondItem="RQB-mo-axN" secondAttribute="leading" constant="20" id="w5e-od-J8V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RQB-mo-axN"/>
+                    </view>
+                    <connections>
+                        <outlet property="tablePropostas" destination="gXN-G2-CPf" id="Z7l-dm-A8n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NJB-ny-Hex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="724"/>
         </scene>
     </scenes>
     <resources>
@@ -2107,14 +2242,14 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s8T-hr-MZu"/>
-        <segue reference="eux-W9-Uz4"/>
+        <segue reference="JHQ-OO-HW5"/>
+        <segue reference="gFN-ny-xpe"/>
         <segue reference="UVs-Fa-sKd"/>
         <segue reference="7GN-i4-wjE"/>
         <segue reference="A9A-MF-ecD"/>
-        <segue reference="dzT-Az-40z"/>
-        <segue reference="rXg-OK-vIG"/>
-        <segue reference="Ml8-ji-EHG"/>
-        <segue reference="pQX-gY-eyg"/>
+        <segue reference="FDw-Z3-WYa"/>
+        <segue reference="CJ8-MU-bTw"/>
+        <segue reference="cUk-yi-8yM"/>
+        <segue reference="zSf-Oz-8Jb"/>
     </inferredMetricsTieBreakers>
 </document>

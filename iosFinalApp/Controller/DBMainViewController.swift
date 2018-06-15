@@ -26,6 +26,9 @@ class DBMainViewController: UIViewController {
     // Actions
     // --
     
+    @IBAction func btnSair(_ sender: Any) {
+        
+    }
     @IBAction func btnSideView(_ sender: Any) {
         
         if isSideViewHidden {
